@@ -1,0 +1,22 @@
+@media screen and (max-width: 768px) {
+    .control-logo {
+        width: 100%;
+        display: flex;
+    }
+
+    .name-logo {
+        display: flex;
+        width: 60%;
+    }
+
+    .email-login, .password-login{
+        display: flex;
+        color: rgb(241, 38, 140) ;
+    }
+
+    .container {
+        justify-content: center;
+        display: flex;
+    }
+    
+  }
