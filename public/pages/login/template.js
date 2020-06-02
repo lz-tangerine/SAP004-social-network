@@ -1,11 +1,19 @@
 const template = `
-<h2>Página login</h2>
-<a href="#register">Cadastrar</a>
 <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <section class="container">
+    <section class="login">
+        <img alt="logo" class="control-logo" src="imagens/logo.png"/>
+        <img alt="logo-name" class="name-logo" src="imagens/logo-name.png"/>
+
+        <label for="email">EMAIL</label>
+        <input type="text" id="email" name="email-login" class="email-login">
+        <label for="password">SENHA</label>
+        <input type="password" id="password" name="password" class="password-login">
+        <button id="login">entrar</button>
+        <span id="loginError"></span>
+        <a href="#register">criar conta</a>
+    </section>
+  </section>
 </div>
 <div id="firebaseui-auth-container">
 </div>
