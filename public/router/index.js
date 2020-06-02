@@ -13,7 +13,9 @@ const init = () => {
 const renderPage = () => {
     pageContainer.innerHTML='';
     const page = validateHash(window.location.hash);
-    pageContainer.appendChild(routes[page]);
+    const route = routes[page];
+    pageContainer.appendChild(route.render());
+    route.init()
 }
 
 const router = () => {
