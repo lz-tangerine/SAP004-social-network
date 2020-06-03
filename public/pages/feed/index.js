@@ -1,6 +1,6 @@
 import template from './template.js'
 
-const feed = ()  => {
+const render = ()  => {
     const container = document.createElement('div');
 
     container.innerHTML = template;
@@ -8,4 +8,13 @@ const feed = ()  => {
     return container;
 }
 
-export default feed;
+
+const init =  () => {
+    console.log('incializaou')
+    
+}
+
+export default {
+    render,
+    init,
+}
