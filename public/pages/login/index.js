@@ -22,6 +22,12 @@ const login = () => {
         }
     });
 }
+const loginGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(() => {
+        window.location = '#feed';
+    });
+}
 
 const render = ()  => {
     const container = document.createElement('div');
@@ -35,6 +41,8 @@ const init =  () => {
     console.log('incializaou')
     const loginButton = document.getElementById('login');
     loginButton.addEventListener('click', login);
+    const googleButton = document.getElementById('loginGoogle');
+    googleButton.addEventListener('click', loginGoogle);
 }
 
 export default {
