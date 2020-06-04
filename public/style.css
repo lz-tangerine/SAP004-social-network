@@ -1,9 +1,78 @@
+* {
+    margin: 0;
+}
+
 @media screen and (max-width: 768px) {
 
-    .container {
+    .container,
+    .container-register,
+    .img-social {
         display: flex;
         justify-content: center;
         background-color: rgb(215,212,252);
+        flex-wrap: wrap;
+    }
+    
+    .container-register {
+        background-color: rgba(255, 255, 255, 0.432);
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .register {
+        width: 60%;
+    }
+
+    h2 {
+        color:rgb(249,133,214);
+    }
+
+    .email-login,
+    .password-login,
+    .email-register,
+    .password-register,
+    .password-confirm,
+    .name,
+    .surname,
+    .nickname,
+    .date,
+    .state,
+    .gender,
+    p {
+        color: rgb(159,158,168);
+        font: 10px;
+        
+    }
+
+    .email-login,
+    .password-login,
+    p,
+    h2,
+    .button-log-in,
+    .email-register,
+    .password-register,
+    .password-confirm,
+    .name,
+    .surname,
+    .nickname,
+    .date,
+    .state,
+    .gender {
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        margin: 10px;
+    }
+
+    .link-create {
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+    }
+
+    p,
+    .link-create {
+        font-size: 12px;
     }
 
     .control-logo {
@@ -12,39 +81,49 @@
     }
 
     .name-logo {
-        
         width: 60%;
-    }
-
-    .email-login, 
-    .password-login,
-    .email-input,
-    .password-input,
-    p {
-        display: flex;
-        color: rgb(159,158,168);
-        font-family: 'Roboto', sans-serif;
-        text-transform: uppercase;
-        font-size: 15px;
     }
 
     .email-login,
     .password-login {
-        margin: 30px 0 10px 0;
+        font-size: 15px;
+        margin: 20px 0 8px 0;
+    }
+
+    p {
+        margin: 5px 0 10px 0;
+    }
+
+    .link-create {
+        color: rgb(56,180,228);
+        padding: 5px;
+    }
+
+    .email-input, 
+    .password-input,
+    .input {
+        border-color: rgb(215,212,252);
+        background-color: rgb(243, 242, 242);
+        border-radius: 3px;
+        font-size: 20px;
+        display: flex;
+        color: rgb(159,158,168);
+        font-family: 'Roboto', sans-serif;
+        outline-color:rgb(56,180,228);
+    }
+
+    .input {
+        font-size: 18px;
     }
 
     .email-input, 
     .password-input {
-        border-color: rgb(215,212,252);
-        background-color: rgb(243, 242, 242);
-        border-radius: 3px;
-        width: 80%;
         font-size: 20px;
     }
 
-    .button-log-in {
-        font-family: 'Roboto', sans-serif;
-        text-transform: uppercase;
+    .button-log-in,
+    .register-button {
+        justify-content: center;
         color: rgb(255, 255, 255);
         font-size: 18px;
         background-color: rgb(249,133,214);
@@ -55,12 +134,20 @@
         padding: 10px;
     }
 
+    .span {
+        margin: 5px;
+    }
+
     .login-facebook,
     .login-google {
-        width: 40%;
+        width: 20%;
     }
 
     .button{
         width: 40%;
         border: none;
+    }
+
+    #load {
+        display: none;
     }
