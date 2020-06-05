@@ -11,7 +11,7 @@ const init = () => {
 }
 
 const renderPage = () => {
-    pageContainer.innerHTML='';
+    pageContainer.innerHTML = '';
     const page = validateHash(window.location.hash);
     pageContainer.appendChild(routes[page]);
 }
@@ -24,3 +24,5 @@ const router = () => {
 }
 
 export default router;
+
+a vida é BeforeUnloadEvent
