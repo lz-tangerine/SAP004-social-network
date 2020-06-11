@@ -10,15 +10,18 @@ const template = `
         <label for="password" class="password-login">senha</label>
         <input type="password" id="password" name="password" class="password-input">
       </div>
-      <span id="loginError"></span>
+      <span id="loginError" class="error"></span>
       <button id="login" class="button-log-in">entrar</button>
-      <p>entrar com</p>
+      <div class="network-social">
+      <p class="enter-with">entrar com</p>
       <div class="img-social">
         <img src="imagens/icons-facebook.png" id="loginFacebook" class="login-facebook"/>
         <img src="imagens/icons-google-01.png" id="loginGoogle" class="login-google"/>
       </div>
-      <p>Não tem uma conta?</p>
-      <a href="#register" class="link-create">criar conta</a>
+      <div class="create">
+        <p class="create">Não tem uma conta?</p>
+        <a href="#register" class="link-create">criar conta</a>
+      </div>
   </section>
 `;
 export default template;
