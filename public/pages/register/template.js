@@ -6,53 +6,49 @@ const template = `
         <div>
             <h2>Criar conta</h2>
         </div>
-        <div>
+        <div class="content">
             <label for="email" class="email-register">email</label>
             <input type="text" id="email" name="email-login" class="input">
         </div>
-        <div>
-            <label for="password-register" class="password-register">senha</label>
-            <input type="password" id="password-register" name="password" class="input">
-        </div>
-        <div>
-            <label for="confirm-password" class="password-confirm">confirmar senha</label>
+        <div class="content">
+            <label for="password" class="password-register">senha</label>
             <input type="password" id="password" name="password" class="input">
         </div>
-        <div>
+        <div class="content">
+            <label for="password-confirm" class="password-confirm">confirmar senha</label>
+            <input type="password" id="password-confirm" name="password-confirm" class="input">
+        </div>
+        <div class="content">
             <label for="name" class="name">Nome</label>
             <input type="text" id="name" class="input">
         </div>
-        <div>
+        <div class="content">
             <label for="surname" class="surname">Sobrenome</label>
             <input type="text" id="surname" class="input">
         </div>
-        <div>
-            <label for="nickname" class="nickname">Apelido</label>
-            <input type="text" id="nickname" class="input">
-        </div>
-        <div>
+        <div class="content">
             <label for="date" class="date">Data de nascimento</label>
             <input type="date" id="date" class="input">
         </div>
-        <div>
-            <label for="state" class="state">Estado</label>
-            <input type="text" id="state" class="input">
+        <div class="content">
+            <label for="status" class="status">Status Relacionamento</label>
+            <input type="text" id="status" class="input">
         </div>
-        <div class="radio-gender">
+        <div class="radio-gender class="content"">
             <label for="gender" class="gender">Como você se identifica?</label>
-            <input type="radio" id="gender-masc" class="gender-camp">
+            <input type="radio" name="radio" id="gender-masc" class="gender-camp">
             <label for="gender-masc">Masculino</label>
-            <input type="radio" id="gender-fem" class="gender-camp">
+            <input type="radio" name="radio" id="gender-fem" class="gender-camp">
             <label for="gender-fem">Feminino</label>
-            <input type="radio" id="gender-outher" class="gender-camp" valor="outher">
+            <input type="radio" name="radio" id="gender-outher" class="gender-camp" valor="outher">
             <label for="gender-outher">Outro</label>
-            <input type="text" id="gender-outher" class="gender-camp">
         </div>
         <button id="register" class="register-button">Criar conta</button>
-        <a href="#">Voltar para o login</a>
+        <span id="loginError" class="error"></span> 
+        <a href="#" class="button-back">Voltar para o login</a>
     </section>
-</section>
-
+    
+</section>  
 `;
 
 export default template;
