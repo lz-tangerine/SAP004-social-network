@@ -2,7 +2,62 @@
     margin: 0;
 }
 
-@media screen and (max-width: 768px) {
+body {
+    background-color: rgb(215,212,252);
+} 
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.control-logo {
+    width: 60%;
+    margin: 30px;
+}
+
+.name-logo {
+    width: 40%;
+}
+
+.email-login,
+.password-login,
+#loginError,
+.button-log-in {
+    font-size: 30px;
+    color: rgb(138, 138, 143);
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    margin: 40px 0 8px 0;
+    display: inline-block;
+    
+}
+
+.email-input, 
+.password-input {
+    width: 100%;
+    border-color: rgb(215,212,252);
+    background-color: rgb(243, 242, 242);
+    border-radius: 3px;
+    font-size: 20px;
+    display: flex;
+    color: rgb(159,158,168);
+    font-family: 'Roboto', sans-serif;
+    outline-color:rgb(56,180,228);
+    height: 35%;
+    }
+
+.button-log-in,
+.play {
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(249,133,214);
+    border-color: none;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 700px) {
 
     .container,
     .container-register,
@@ -13,15 +68,24 @@
         flex-wrap: wrap;
     }
     
-    .container-register {
+    .container-register,,
+    .post-like {
         background-color: rgba(255, 255, 255, 0.432);
-        margin: 10px;
+        margin: 6px;
+        border-radius: 10px;
+    }
+
+    .post {
+        background-color: rgba(255, 255, 255, 0.432);
+        margin: 45px 10px 0 20px;
         border-radius: 10px;
     }
 
     .register {
         width: 60%;
     }
+
+
 
     h2 {
         color:rgb(249,133,214);
@@ -38,15 +102,16 @@
     .date,
     .state,
     .gender,
-    p {
-        color: rgb(159,158,168);
+    .enter-with {
+        color: rgb(138, 138, 143);
         font: 10px;
+        display: inline-block;
         
     }
 
     .email-login,
     .password-login,
-    p,
+    .enter-with,
     h2,
     .button-log-in,
     .email-register,
@@ -61,21 +126,28 @@
         text-transform: uppercase;
         font-family: 'Roboto', sans-serif;
         display: flex;
-        margin: 10px;
+        margin: 40px 0 8px 0;
     }
 
-    .link-create {
+    .enter-with,
+    h3,
+    .user,
+    .create,
+    .link-create,
+    .button-back,
+    .compart,
+    .play,
+    #loginError,
+    .user-perfil,
+    .type-person {
         text-transform: uppercase;
         font-family: 'Roboto', sans-serif;
         display: flex;
-    }
-
-    p,
-    .link-create {
         font-size: 12px;
     }
 
-    .control-logo {
+    .control-logo,
+    .content {
         width: 80%;
         
     }
@@ -90,18 +162,27 @@
         margin: 20px 0 8px 0;
     }
 
-    p {
-        margin: 5px 0 10px 0;
+    
+    .enter-with,
+    .create {
+        margin: 8px 0 10px 0;
+        color: rgb(138, 138, 143);
+        justify-content: center;
     }
 
     .link-create {
-        color: rgb(56,180,228);
-        padding: 5px;
+            
+        padding: 8px;
+    }
+
+    .senha {
+        display: inline-block;
     }
 
     .email-input, 
     .password-input,
     .input {
+        width: 100%;
         border-color: rgb(215,212,252);
         background-color: rgb(243, 242, 242);
         border-radius: 3px;
@@ -110,37 +191,49 @@
         color: rgb(159,158,168);
         font-family: 'Roboto', sans-serif;
         outline-color:rgb(56,180,228);
+        height: 35%;
     }
 
     .input {
         font-size: 18px;
     }
 
-    .email-input, 
-    .password-input {
-        font-size: 20px;
-    }
-
     .button-log-in,
-    .register-button {
+    .register-button,
+    .compart,
+    .play {
         justify-content: center;
         color: rgb(255, 255, 255);
-        font-size: 18px;
         background-color: rgb(249,133,214);
         border-color: none;
         border-radius: 3px;
-        width: 60%;
-        margin: 50px;
-        padding: 10px;
     }
 
-    .span {
-        margin: 5px;
+    .play {
+        color: rgb(255, 255, 255);
+        background-color: rgb(249,133,214);
+        border-radius: 3px;
+        margin: 10px;
     }
 
     .login-facebook,
     .login-google {
         width: 20%;
+        margin: 6px;
+    }
+
+    .calendar,
+    .like {
+        width: 15%;
+        margin: 5px;
+    }
+
+    .button-log-in,
+    .register-button {
+        width: 60%;
+        margin: 37px;
+        padding: 10px;
+        font-size: 18px;
     }
 
     .button{
@@ -151,3 +244,241 @@
     #load {
         display: none;
     }
+
+    .gender-camp {
+        display: inline-block;
+    }
+
+    #loginError {
+        width: 100%;
+        color: rgb(56,180,228);
+        margin: 10px 0 0 65px;
+    }
+
+    .button-back,
+    h3,
+    .type-person {
+        color: rgb(56,180,228);
+    }
+
+    .compart {
+        width: 40%;
+        margin: 5px;
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .feed-post {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(194, 192, 223);
+    }
+
+    .user-perfil,
+    .user-post {
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        font-size: 18px;
+        color: rgb(122, 122, 126);
+    }
+
+    .feed{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.432);
+        margin: 10px;
+    }
+
+    .feed-pessoal{
+        display: flex;
+    }
+
+    .perfil{
+        align-items: center;
+    }
+
+    .name-perfil{
+        margin: 70px 0 0 10px;
+    }
+
+    .foto-perfil {
+        margin: 70px 0 0 10px;
+        border-radius: 50%;
+        width: 25%;
+    }
+
+    .foto-feed {
+        margin: 20px 0 0 10px;
+        border-radius: 50%;
+        width: 20%;
+    }
+
+    .img-photo,
+    .like-feed,
+    .comentar-feed,
+    .calendar-feed,
+    .compartilhar-feed {
+        width: 10%;
+    }
+
+    .name-avatar{
+        width: 70%;
+        margin-left: 15px;
+    }
+
+    .post {
+        background-color: rgba(255, 255, 255, 0.432);
+        margin: 5px;
+        border-radius: 5px;
+        width: 80%;
+        height: 60%;
+    }
+
+    .img-photo{
+        margin: 10px;
+    }
+
+    .button-post{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .post-feed{
+        flex-wrap: wrap;
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.432);
+        margin: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        width: 70%;
+        justify-content: center;
+    }
+
+
+/* menu */
+a {
+    color:#000;
+}
+
+.header {
+    background-color: #fff;
+    box-shadow:1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index:3;
+    display: flex;
+}
+
+.header ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    overflow:hidden;
+    background-color: #fff;
+}
+
+.header ul a{
+    display: block;
+    outline: 1px solid red;
+    padding: 20px;
+    border-right: 1px solid #aaa;
+    text-decoration: none;
+}
+
+.menu-item:hover{
+    background-color:rgb(56,180,228);
+}
+
+.header .menu{
+    clear:both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon{
+    padding: 28px 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon{
+    background: #333;
+    display: block;
+    height:2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before{
+    background: #333;
+    content:"";
+    display:block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+
+.header .menu-icon .nav-icon::after{
+    background: #333;
+    content:"";
+    display:block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+.header .menu-btn{
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon{
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before{
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after{
+    transform: rotate(45deg);
+    top:0;
+}
+
+@media (min-width:48em){
+    .header li a {
+        padding:20px 30px;
+    }
+    .header .menu-icon{
+        display:none;
+    }
+
+
+    .container,
+    .container-register,
+    .img-social {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(215,212,252);
+    }
+
+    .container-register,
+    .post,
+    .post-like {
+        background-color: rgba(255, 255, 255, 0.432);
+        margin: 6px;
+        border-radius: 10px;
+    }
+
+}
