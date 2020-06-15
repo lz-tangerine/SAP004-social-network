@@ -1,11 +1,13 @@
 const template = `
 <section class="container">
-        <img alt="logo" class="register" src="imagens/logo.png"/>
-        <img alt="logo-name" class="register" src="imagens/logo-name.png"/>
-    <section class="container-register">
-        <div>
-            <h2>Criar conta</h2>
+    <section class="logo-login">
+        <div class="logo">
+            <img alt="logo" class="control-logo" src="imagens/logo.png"/>
         </div>
+        <img alt="logo-name" class="name-logo" src="imagens/logo-name.png"/>
+    </section>
+    <section class="container-register">
+        <h2 class="create-count">Criar conta</h2>
         <div class="content">
             <label for="email" class="email-register">email</label>
             <input type="text" id="email" name="email-login" class="input">
@@ -34,14 +36,20 @@ const template = `
             <label for="status" class="status">Status Relacionamento</label>
             <input type="text" id="status" class="input">
         </div>
-        <div class="radio-gender class="content"">
-            <label for="gender" class="gender">Como você se identifica?</label>
-            <input type="radio" name="radio" id="gender-masc" class="gender-camp">
-            <label for="gender-masc">Masculino</label>
-            <input type="radio" name="radio" id="gender-fem" class="gender-camp">
-            <label for="gender-fem">Feminino</label>
-            <input type="radio" name="radio" id="gender-outher" class="gender-camp" valor="outher">
-            <label for="gender-outher">Outro</label>
+        <div class="content-gender">
+            <label for="gender" class="gender-class">Como você se identifica?</label>
+            <div class="man">
+                <input type="radio" name="radio" id="gender-masc" class="gender-camp">
+                <label for="gender-masc" class="gender">Masculino</label>
+            </div>
+            <div class="female">
+                <input type="radio" name="radio" id="gender-fem" class="gender-camp">
+                <label for="gender-fem" class="gender">Feminino</label>
+            </div>
+            <div class="other">
+                <input type="radio" name="radio" id="gender-outher" class="gender-camp" valor="outher">
+                <label for="gender-outher" class="gender">Outro</label>
+            </div>
         </div>
         <button id="register" class="register-button">Criar conta</button>
         <span id="loginError" class="error"></span> 
