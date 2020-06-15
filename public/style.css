@@ -348,7 +348,7 @@ body {
         visibility: hidden;
         margin-left: 60px;
     }
-      
+    
     .switch + label {
         display: block;
         position: relative;
@@ -490,7 +490,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        }
+    }
 
     .logo{
     width: 100%;
@@ -524,6 +524,27 @@ body {
 
     .register {
         width: 60%;
+    }
+
+    .login{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .email,
+    .password{
+        width: 80%;
+    }
+
+    .enter{
+        justify-content: center;
+        display: flex;
+        width: 100%;
+    }
+
+    .create {
+        display: flex;
     }
 
     .create-count {
@@ -954,12 +975,22 @@ body {
     }
 
 /* menu */
+
+.menu-feed {
+    margin: 0 0 0 15px;
+}
+
 a {
-    color:#000;
+    color:rgb(255, 255, 255);
+    background-color: rgb(249,133,214);;
+}
+
+.logo-feed {
+    margin: 8px 0 0 10px;
 }
 
 .header {
-    background-color: #fff;
+    background-color: rgb(249,133,214);
     box-shadow:1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
@@ -975,11 +1006,9 @@ a {
     background-color: #fff;
 }
 
-.header ul a{
+.header ul li a{
     display: block;
-    outline: 1px solid red;
     padding: 20px;
-    border-right: 1px solid #aaa;
     text-decoration: none;
 }
 
@@ -1061,4 +1090,6 @@ a {
     }
 
 }
+
 }
+
