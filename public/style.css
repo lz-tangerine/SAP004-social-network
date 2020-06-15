@@ -435,7 +435,6 @@ body {
         display: flex;
         justify-content: flex-end;
         flex-wrap: wrap;
-}
     }
 
     .feed-pessoal {
@@ -1061,4 +1060,5 @@ a {
         display:none;
     }
 
+}
 }
