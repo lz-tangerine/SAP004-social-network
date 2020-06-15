@@ -1,7 +1,7 @@
 const template = `
 <section class="feed-container">
     <header class="header">
-        <nav id="menu-feed">
+        <nav id="menu-feed" class="menu-feed">
             <input id="menu-hamburguer" type="checkbox" class="menu-btn"/>
             <label for="menu-hamburguer" class="menu-icon"><span class="nav-icon"></span></label>
             <ul class="menu">
@@ -11,7 +11,7 @@ const template = `
                 <li><a href="#sair" class="menu-item">Sair</a></li>
             </ul>
         </nav>
-        <div>
+        <div class="logo-feed">
         <img alt="logo-nav" class="feed-logo" src="imagens/logo-name.png"/>
         </div>
     </header>
