@@ -210,11 +210,12 @@ body {
 
     .feed-logo{
         width: 60%;
-        margin-left: 130px ;
+        margin-left: 110px ;
     }
 
     .menu-feed{
         display: flex;
+        margin: 0 0 0 15px;
     }
 
     .feed-container{
@@ -1081,6 +1082,8 @@ a {
     top:0;
 }
 
+}
+
 @media (min-width:48em){
     .header li a {
         padding:20px 30px;
@@ -1088,8 +1091,29 @@ a {
     .header .menu-icon{
         display:none;
     }
+    }
 
+/*comments*/
+.comment-container {
+    display: none;
 }
 
+.comment-container.show{
+    display: block;
 }
 
+.foto-comment{
+    display: 50%;
+    width: 10%;
+    border-radius: 50%;
+    margin: 5px 10px ;
+}
+
+.comment{
+    display: flex;
+    align-items: center;
+}
+
+.input-comment{
+    border-radius: 5px;
+}
