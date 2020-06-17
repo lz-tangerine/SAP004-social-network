@@ -4,25 +4,32 @@ const pageContainer = document.getElementById('page-container');
 
 const validateHash = (hash) => hash === '' ? 'login' : hash.replace('#', '');
 
-const init = () => {
-    window.addEventListener('hashchange', () => {
-        renderPage();
-    })
-}
-
 const renderPage = () => {
     pageContainer.innerHTML='';
     const page = validateHash(window.location.hash);
     const route = routes[page];
-    pageContainer.appendChild(route.render());
-    route.init()
+    if (page != 'login') {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                pageContainer.appendChild(route.render());
+                route.init();
+            } else {
+                document.location.hash = '#login';
+            }
+        });
+    } else {
+        pageContainer.appendChild(route.render());
+        route.init();
+    }
 }
 
 const router = () => {
     window.addEventListener('load', () => {
         renderPage();
+    });
+    window.addEventListener('hashchange', () => {
+        renderPage();
     })
-    init();
 }
 
 export default router;

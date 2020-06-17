@@ -1,12 +1,12 @@
 import template from './template.js'
 import postTemplate from './postTemplate.js'
 
-const render = ()  => {
-    const container = document.createElement('div');
+const render = () => {
+  const container = document.createElement('div');
 
-    container.innerHTML = template;
+  container.innerHTML = template;
 
-    return container;
+  return container;
 }
 
 const createPost = () => {
@@ -53,20 +53,20 @@ const commentPost = (id, text) => {
 }
 
 const deletePost = (event) => {
-    const id = event.target.dataset.id;
-    firebase.firestore().collection('posts').doc(id).delete();
+  const id = event.target.dataset.id;
+  firebase.firestore().collection('posts').doc(id).delete();
 }
 
 const addDeleteEvent = (post) => {
-    const deleteButton = document.getElementById(`delete-${post.id}`)
-    if (deleteButton) {
-        deleteButton.addEventListener('click', deletePost)
-    }
+  const deleteButton = document.getElementById(`delete-${post.id}`)
+  if (deleteButton) {
+    deleteButton.addEventListener('click', deletePost)
+  }
 }
 
 const addLikeEvent = (post) => {
-    const likeButton = document.getElementById(`like-${post.id}`)
-    likeButton.addEventListener('click', likePost)
+  const likeButton = document.getElementById(`like-${post.id}`)
+  likeButton.addEventListener('click', likePost)
 }
 
 const showCommentButton = (post) => {
@@ -119,22 +119,15 @@ const showFeed = () => {
         posts.forEach(addEvents)
     });
 }
-    
 
-const init =  () => {
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            console.log('incializaou')
-            const postButton = document.getElementById('createPost');
-            postButton.addEventListener('click', createPost);
-            showFeed();
-        }
-      });
-   
-    
+const init = () => {
+  console.log('incializaou')
+  const postButton = document.getElementById('createPost');
+  postButton.addEventListener('click', createPost);
+  showFeed();
 }
 
 export default {
-    render,
-    init,
+  render,
+  init,
 }
