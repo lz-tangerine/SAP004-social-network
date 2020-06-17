@@ -10,10 +10,69 @@ const saverUserData = () => {
     surname: surname.value,
     status: status.value,
     date: date.value,
+    photo: "",
     user_uid: firebase.auth().currentUser.uid,
   };
-  firebase.firestore().collection('users').add(user);
+  return firebase.firestore().collection('users').doc(firebase.auth().currentUser.uid).set(user);
 };
+
+
+// inicio do Envio de imagem
+let uploadFoto = () => {
+  let uid = firebase.auth().currentUser.uid;
+  let inpFile = document.querySelector("input[name='photo']")
+  let file = inpFile.files[0]
+  if (!file || !file.name) {
+    return;
+  }
+  let storageRef = firebase.storage().ref();
+
+  var blob = new Blob([file], { type: "image/jpeg" });
+
+  var uploadTask = storageRef.child(`upload/${uid}_${file.name}`).put(blob);
+
+  uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+    function (snapshot) {
+
+      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      switch (snapshot.state) {
+        case firebase.storage.TaskState.PAUSED: // or 'paused'
+          break;
+        case firebase.storage.TaskState.RUNNING: // or 'running'
+          break;
+      }
+    },
+    function (error) {
+
+      switch (error.code) {
+        case 'storage/unauthorized':
+          alert('Nao autorizado ! ')
+          break;
+
+        case 'storage/canceled':
+          alert('Usuario cancelou upload ! ')
+          break;
+
+        case 'storage/unknown':
+          alert('Storage nao configurado ! ')
+          break;
+      }
+    },
+    function () {
+      uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+        // console.log('File available at', downloadURL);
+        let user_uid = firebase.auth().currentUser.uid;
+
+        firebase.firestore().collection('users').doc(user_uid).update({
+          photo : downloadURL
+        });
+        // firebase.firestore().collection('users').where('user_uid', '==', user_uid).get().then( ....
+        // firebase.firestore().collection('users').doc(firebase.auth().currentUser.uid).get().then(x => console.log(x.data()))
+
+      });
+    });
+}
+// fim do envio de imagem
 
 const create = () => {
   const email = document.getElementById('email').value;
@@ -30,19 +89,24 @@ const create = () => {
     loginError.innerHTML = 'A senha deve possuir ao menos 6 caracteres';
   } else if (password === passwordConfirm) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((teste) => {
-      console.log(teste);
-      saverUserData();
-      window.location = '#login';
-    }).catch((error) => {
-      const errorCode = error.code;
-      console.log(error);
-      
-    });
+      .then((data) => {
+        console.log("USER", data);
+        let inserted = saverUserData();
+        inserted.then((data) => {
+          uploadFoto();
+          window.location.hash = '#login';
+        }).catch((error) => {
+          alert(`Erro : ${error.code} `);
+        });
+
+      }).catch((error) => {
+        const errorCode = error.code;
+        console.log(error);
+      });
   }
 };
 
-const render = ()  => {
+const render = () => {
   const container = document.createElement('div');
   container.innerHTML = template;
   return container;
@@ -55,6 +119,6 @@ const init = () => {
 };
 
 export default {
-  render, 
+  render,
   init,
 }
