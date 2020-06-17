@@ -20,6 +20,37 @@
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
 
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
+
+<script>
+// Your web app's Firebase configuration precisa estar em um arquivo js que importa para um main.js para não ficar exposto
+  var firebaseConfig = {
+    apiKey: "AIzaSyCefK-JyRt-1HFF4aQE-rgdj5QudnulXM0",
+    authDomain: "rede-social-04-5643a.firebaseapp.com",
+    databaseURL: "https://rede-social-04-5643a.firebaseio.com",
+    projectId: "rede-social-04-5643a",
+    storageBucket: "rede-social-04-5643a.appspot.com",
+    messagingSenderId: "779943174112",
+    appId: "1:779943174112:web:a25113ff3da4d6450c9585",
+    measurementId: "G-7CH6K3CDX1"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  var storage = firebase.storage();
+
+</script>
+
+
   </head>
   <body>
     <div id="load"></div>
