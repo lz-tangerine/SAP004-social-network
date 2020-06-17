@@ -2,7 +2,7 @@ const template = `
 <section class="feed-container">
 
   <header class="header">
-    <nav id="menu-feed">
+    <nav id="menu-feed" class="menu-sandwich">
       <input id="menu-hamburguer" type="checkbox" class="menu-btn"/>
       <label for="menu-hamburguer" class="menu-icon"><span class="nav-icon"></span></label>
       <ul class="menu">
