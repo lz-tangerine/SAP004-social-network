@@ -41,8 +41,8 @@ const commentPost = (id, text) => {
   firebase.firestore().collection('posts').doc(id).get()
     .then((post) => {
       const comments = post.data().comments;
-      const userId = firebase.auth().currentUser.uid
-      const comment = { text, userId }
+      const userName = firebase.auth().currentUser.displayName
+      const comment = { text, userName}
 
       comments.push(comment)
       firebase.firestore().collection('posts').doc(id).update({
