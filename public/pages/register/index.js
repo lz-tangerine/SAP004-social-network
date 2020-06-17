@@ -94,7 +94,7 @@ const create = () => {
         let inserted = saverUserData();
         inserted.then((data) => {
           uploadFoto();
-          window.location.hash = '#login';
+          window.location.hash = '#feed';
         }).catch((error) => {
           alert(`Erro : ${error.code} `);
         });
