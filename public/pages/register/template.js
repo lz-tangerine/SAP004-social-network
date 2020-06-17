@@ -51,11 +51,10 @@ const template = `
                 <label for="gender-outher" class="gender">Outro</label>
             </div>
         </div>
-        <button id="register" class="register-button">Criar conta</button>
+        <button id="register" class="register-button button" href="#popup1">Criar conta</button>
         <span id="loginError" class="error"></span> 
         <a href="#" class="button-back">Voltar para o login</a>
     </section>
-    
 </section>  
 `;
 
