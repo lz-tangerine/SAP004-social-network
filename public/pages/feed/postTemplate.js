@@ -13,6 +13,7 @@ const commentTemplate = ({text, userId}) => {
         <div>
             <img src="imagens/astronautrosie.jpg" alt="" class="foto-feed">
             <span class="user-post">${userId}</span>
+            <img src="imagens/lixo-01.png"/ class="delete"/>
         </div>
         <p class="post-text">${text}</p>
     </div>
