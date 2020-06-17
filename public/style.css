@@ -9,26 +9,26 @@ body {
 
 @media screen and (min-width: 701px) {
   .logo-login {
-    justify-content: center;
-    width: 50%;
-    height: 100%;
-    margin: 80px 0 0 0;
+      justify-content: center;
+      width: 50%;
+      height: 100%;
+      margin: 80px 0 0 0;
   }
 
   .logo {
-    display: flex;
-    justify-content: center;
+      display: flex;
+      justify-content: center;
   }
 
   .logo-login,
   .login {
-    flex-wrap: wrap;
-    display: flex;
+      flex-wrap: wrap;
+      display: flex;
   }
 
   .container{
-    justify-content: center;
-    margin:10px;
+      justify-content: center;
+      margin:10px;
   }
 
   .container,
@@ -36,34 +36,36 @@ body {
   .img-social,
   .email-input, 
   .password-input {
-    display: flex;
+      display: flex;
   }
 
+  
+
   .login {
-    justify-content: center;
-    width: 50%;
-    margin: 30px 0 5px 0;
+      justify-content: center;
+      width: 50%;
+      margin: 30px 0 5px 0;
   }
 
   .img-social {
-    background-color: rgb(215,212,252);
+      background-color: rgb(215,212,252);
   }
 
   .post,
   .post-like {
-    background-color: rgba(255, 255, 255, 0.432);
-    margin: 6px;
-    border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.432);
+      margin: 6px;
+      border-radius: 10px;
   }
 
   .container-register{
-  background-color: rgba(255, 255, 255, 0.432);
-  margin: 50px 10px 0 10px;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 10px;
-  justify-content: center;
-  width: 40%;
+      background-color: rgba(255, 255, 255, 0.432);
+      margin: 50px 10px 0 10px;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 10px;
+      justify-content: center;
+      width: 40%;
   }
 
   .control-logo {
@@ -77,19 +79,19 @@ body {
   }
 
   .content-gender{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-left: 40px;
   }
 
   .man,
   .female{
-    width: 50%;
+      width: 50%;
   }
 
   .other{
-    width: 100%;
+      width: 100%;
   }
 
   .enter-with,
@@ -98,8 +100,8 @@ body {
   .password,
   .img-social,
   .content-gender {
-    width: 100%;
-    justify-content: center;
+      width: 100%;
+      justify-content: center;
   }
 
   .enter-login {
@@ -120,10 +122,10 @@ body {
   }
 
   .gender {
-    font-size: 12px;
-    padding: 5px;
-    color: rgb(138, 138, 143);
-    text-transform: uppercase;
+      font-size: 12px;
+      padding: 5px;
+      color: rgb(138, 138, 143);
+      text-transform: uppercase;
   }
 
   .email-login,
@@ -140,12 +142,12 @@ body {
   .status,
   .gender-class,
   .user-perfil {
-    font-size: 12px;
-    color: rgb(138, 138, 143);
-    text-transform: uppercase;
-    display: inline-block;
-    width: 100%;
-    margin: 10px;
+      font-size: 12px;
+      color: rgb(138, 138, 143);
+      text-transform: uppercase;
+      display: inline-block;
+      width: 100%;
+      margin: 10px;
   }
 
   .enter-with {
@@ -156,34 +158,34 @@ body {
   .email-input, 
   .password-input,
   .input {
-    width: 95%;
-    border-color: rgb(215,212,252);
-    background-color: rgb(243, 242, 242);
-    border-radius: 7px;
-    font-size: 20px;
-    color: rgb(159,158,168);
-    outline-color:rgb(56,180,228);
-    margin:5px;
-  }
+      width: 95%;
+      border-color: rgb(215,212,252);
+      background-color: rgb(243, 242, 242);
+      border-radius: 7px;
+      font-size: 20px;
+      color: rgb(159,158,168);
+      outline-color:rgb(56,180,228);
+      margin:5px;
+      }
 
   .button-log-in,
   .play,
   .register-button {
-    justify-content: center;
-    color: rgb(255, 255, 255);
-    background-color: rgb(249,133,214);
-    border-color: none;
-    border-radius: 3px;
-    margin: 15px;
-    padding: 5px;
-    text-transform: uppercase;
+      justify-content: center;
+      color: rgb(255, 255, 255);
+      background-color: rgb(249,133,214);
+      border-color: none;
+      border-radius: 3px;
+      margin: 15px;
+      padding: 5px;
+      text-transform: uppercase;
   }
 
   .button-back{
-    text-transform: uppercase;
-    font-size: 12px;
-    color: rgb(56,180,228);
-    margin-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgb(56,180,228);
+      margin-bottom: 5px;
   }
 
   .button-log-in{
@@ -193,266 +195,267 @@ body {
 
   .email,
   .password{
-    margin: 10px 60px 0 60px;
+      margin: 10px 60px 0 60px;
   }
 
   .create-count {
-    text-transform: uppercase;
-    color:rgb(249,133,214);
-    font-size: 18px;
-    margin-top: 30px;
+      text-transform: uppercase;
+      color:rgb(249,133,214);
+      font-size: 18px;
+      margin-top: 30px;
   }
 
 
-/*feed*/
+  /*feed*/
 
   .feed-logo{
-    width: 60%;
-    margin-left: 130px ;
+      width: 60%;
+      margin-left: 130px ;
   }
 
   .menu-feed{
-    display: flex;
+      display: flex;
   }
 
   .feed-container{
-    width: 100%;
+      width: 100%;
   }
 
   .header{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color:rgb(249,133,214);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color:rgb(249,133,214);
   }
 
   .menu-btn,
   .menu-icon{
-    display: none;
+      display: none;
   }
 
   ul {
-    padding:0px;
-    margin:0px;
-    list-style:none;
+      padding:0px;
+      margin:0px;
+      list-style:none;
   }
 
   ul li { 
-    display: inline; 
+      display: inline; 
   }
 
   ul li a {
-    padding: 2px 10px;
-    display: inline-block;
-
-/* visual do link */
-    color: rgb(255, 255, 255);
-    text-decoration: none;
+      padding: 2px 10px;
+      display: inline-block;
+  
+      /* visual do link */
+      color: rgb(255, 255, 255);
+      text-decoration: none;
   }
 
   ul li a:hover {
-    color: rgb(131, 130, 130);
-    border-bottom:3px solid rgb(56,180,228);
-    border-radius: 3px;
+      color: rgb(131, 130, 130);
+      border-bottom:3px solid rgb(56,180,228);
+      border-radius: 3px;
   }
 
   .foto-perfil {
-    border-radius: 50%;
-    width: 20%;
-    margin: 0 10px 10px 0;
+      border-radius: 50%;
+      width: 20%;
+      margin: 0 10px 10px 0;
   }
 
   .photo-name{
-    width: 30%;
-    flex-wrap: wrap;
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.432);
-    margin: 30px 0 30px 50px;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
+      width: 30%;
+      flex-wrap: wrap;
+      display: flex;
+      background-color: rgba(255, 255, 255, 0.432);
+      margin: 30px 0 30px 50px;
+      border-radius: 5px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
   }
 
   .capa-feed {
-    width: 100%;
-    display: flex;
-    margin: 0 0 10px 0;
+      width: 100%;
+      display: flex;
+      margin: 0 0 10px 0;
   }
 
   .name-perfil{
-    margin: 0 0 10px 20px;
+      margin: 0 0 10px 20px;
   }
 
   .type-person{
-    color: rgb(56,180,228);
-    font-size: 8px;
-    text-transform: uppercase;
+      color: rgb(56,180,228);
+      font-size: 8px;
+      text-transform: uppercase;
+
   }
 
   .img-photo{
-    width: 10%;
-    margin-left: 20px;
+      width: 10%;
+      margin-left: 20px;
   }
 
   .post-feed,
   .feed-post{
-    display: flex;
+      display: flex;
   }
 
   .post-feed{
-    background:rgb(208,205,237);
-    border-radius: 10px;   
-    width: 50%;
-    flex-wrap: wrap;
-    margin: 30px;
+      background:rgb(208,205,237);
+      border-radius: 10px;   
+      width: 50%;
+      flex-wrap: wrap;
+      margin: 30px;
   }
 
   .post{
-    width: 90%;
-    margin: 10px;
+      width: 90%;
+      margin: 10px;
+
   }
 
   .button-post {
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
   }
 
-/*botão bonitinho*/
+  /*botão bonitinho*/
 
   .private-button {
-    margin-left: 30px;
+      margin-left: 30px;
   }
 
   .post-private{
-    font-size: 15px;
-    margin: 10px;
-    text-transform: uppercase;
-    color: rgb(56,180,228);
+      font-size: 15px;
+      margin: 10px;
+      text-transform: uppercase;
+      color: rgb(56,180,228);
   }
 
   .switch__container {
-    display: flex;
-    align-items: center;
-    justify-content: left;
+      display: flex;
+      align-items: center;
+      justify-content: left;
   }
 
   .switch {
-    position: absolute;
-    margin-left: -9999px;
-    visibility: hidden;
-    margin-left: 60px;
+      position: absolute;
+      margin-left: -9999px;
+      visibility: hidden;
+      margin-left: 60px;
   }
-
+  
   .switch + label {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    user-select: none;
+      display: block;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
   }
 
   .switch--shadow + label {
-    padding: 2px;
-    width: 40px;
-    height: 20px;
-    background-color: #dddddd;
-    border-radius: 60px;
+      padding: 2px;
+      width: 40px;
+      height: 20px;
+      background-color: #dddddd;
+      border-radius: 60px;
   }
 
   .switch--shadow + label:before,
   .switch--shadow + label:after {
-    display: block;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    bottom: 1px;
-    content: '';
+      display: block;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      bottom: 1px;
+      content: '';
   }
 
   .switch--shadow + label:before {
-    right: 1px;
-    background-color: #f1f1f1;
-    border-radius: 60px;
-    transition: all 0.4s;
+      right: 1px;
+      background-color: #f1f1f1;
+      border-radius: 60px;
+      transition: all 0.4s;
   }
 
   .switch--shadow + label:after {
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 100%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s;
   }
 
   .switch--shadow:checked + label:before {
-    background-color: #8ce196;
+      background-color: #8ce196;
   }
 
   .switch--shadow:checked + label:after {
-    transform: translateX(20px);
+      transform: translateX(20px);
   }
-
   /*fim botão bonitinho*/
 
-/* css post template*/
+  /* css post template*/
 
   .foto-feed{
-    width: 10%;
+      width: 10%;
   }
 
 
   .post-text{
-    margin: 10px;
-    border: 1px solid gray;
-    border-radius: 5px;
-    padding: 30px;
-    width: 100%;
+      margin: 10px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      padding: 30px;
+      width: 100%;
   }
   
 
   .feed{
-    display: flex;
+      display: flex;
   }
 
   .template-feed {
-    justify-content: end;
-    width: 50%;
-    margin: 0 190px 30px 0;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.432);
+      justify-content: end;
+      width: 50%;
+      margin: 0 190px 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.432);
   }
 
   .timeline-feed{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
   }
 
   .feed-pessoal {
-    margin: 20px 20px 10px 10px;
-    align-items: center;
-    display: flex;
+      margin: 20px 20px 10px 10px;
+      align-items: center;
+      display: flex;
   }
 
   .foto-feed{
-    border-radius: 50%;
-    margin: 10px;
+      border-radius: 50%;
+      margin: 10px;
   }
 
   .itens-text{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
   }
 
   .itens-post{
-    display: flex;
+      display: flex;
   }
 
   .comentar-feed,
@@ -460,9 +463,9 @@ body {
   .compartilhar-feed,
   .like-feed,
   .delete {
-    width: 15%;
-    height: 85%;
-    margin: 0 10px;
+      width: 15%;
+      height: 85%;
+      margin: 0 10px;
   }
 
   .icons-left {
@@ -484,9 +487,9 @@ body {
 @media screen and (max-width: 700px) {
 
   .logo-login{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
   }
 
   .logo{
@@ -500,33 +503,54 @@ body {
   .container,
   .container-register,
   .img-social {
-    display: flex;
-    justify-content: center;
-    background-color: rgb(215,212,252);
-    flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      background-color: rgb(215,212,252);
+      flex-wrap: wrap;
   }
 
   .container-register,
   .post-like {
-    background-color: rgba(255, 255, 255, 0.432);
-    margin: 10px;
-    border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.432);
+      margin: 10px;
+      border-radius: 10px;
   }
 
   .post {
-    background-color: rgba(255, 255, 255, 0.432);
-    margin: 45px 10px 0 20px;
-    border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.432);
+      margin: 45px 10px 0 20px;
+      border-radius: 10px;
   }
 
   .register {
-    width: 60%;
+      width: 60%;
+  }
+
+  .login{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .email,
+  .password{
+      width: 80%;
+  }
+
+  .enter{
+      justify-content: center;
+      display: flex;
+      width: 100%;
+  }
+
+  .create {
+      display: flex;
   }
 
   .create-count {
-    color:rgb(249,133,214);
-    font-size: 15px;
-    text-transform: uppercase;
+      color:rgb(249,133,214);
+      font-size: 15px;
+      text-transform: uppercase;
   }
 
   .email-login,
@@ -543,43 +567,43 @@ body {
   .date,
   .state,
   .status{
-    text-transform: uppercase;
-    margin: 40px 0 8px 0;
-    color: rgb(138, 138, 143);
-    font: 10px;
-    display: inline-block;
+      text-transform: uppercase;
+      margin: 40px 0 8px 0;
+      color: rgb(138, 138, 143);
+      font: 10px;
+      display: inline-block;
   }
 
   .content-gender{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 40px 35px 0;
-    justify-content: space-evenly;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 40px 35px 0;
+      justify-content: space-evenly;
   }
 
   .gender-class{
-    width: 100%;
-    text-transform: uppercase;
-    color: rgb(138, 138, 143);
-    font: 10px;
+      width: 100%;
+      text-transform: uppercase;
+      color: rgb(138, 138, 143);
+      font: 10px;
   }
 
   .gender {
-    color: rgb(138, 138, 143);
-    text-transform: uppercase;
-    font-size: 13px;
+      color: rgb(138, 138, 143);
+      text-transform: uppercase;
+      font-size: 13px;
   }
 
   .man,
   .female {
-    width: 50%;
-    margin: 15px 0;
+      width: 50%;
+      margin: 15px 0;
   }
 
   .other{
-    width:100%;
-    color: rgb(138, 138, 143);
-    text-transform: uppercase;
+      width:100%;
+      color: rgb(138, 138, 143);
+      text-transform: uppercase;
   }
   
   .enter-with,
@@ -595,69 +619,69 @@ body {
   .type-person,
   .man,
   .female{
-    text-transform: uppercase;
-    font-size: 12px;
+      text-transform: uppercase;
+      font-size: 12px;
   }
 
   .control-logo,
   .content {
-    width: 80%;
-    
+      width: 80%;
+      
   }
 
   .name-logo,
   .feed-logo {
-    width: 60%;
+      width: 60%;
   }
 
   .email-login,
   .password-login {
-    font-size: 15px;
-    margin: 20px 0 8px 0;
+      font-size: 15px;
+      margin: 20px 0 8px 0;
   }
 
   
   .enter-with,
   .create {
-    margin: 8px 0 10px 0;
-    color: rgb(138, 138, 143);
-    justify-content: center;
+      margin: 8px 0 10px 0;
+      color: rgb(138, 138, 143);
+      justify-content: center;
   }
 
   .link-create {
-    padding: 8px;
+      padding: 8px;
   }
 
   .senha {
-    display: inline-block;
+      display: inline-block;
   }
 
   .email-input, 
   .password-input,
   .input {
-    width: 100%;
-    border-color: rgb(215,212,252);
-    background-color: rgb(243, 242, 242);
-    border-radius: 3px;
-    font-size: 20px;
-    color: rgb(159,158,168);
-    outline-color:rgb(56,180,228);
-    height: 35%;
+      width: 100%;
+      border-color: rgb(215,212,252);
+      background-color: rgb(243, 242, 242);
+      border-radius: 3px;
+      font-size: 20px;
+      color: rgb(159,158,168);
+      outline-color:rgb(56,180,228);
+      height: 35%;
   }
 
   .input {
-    font-size: 18px;
+      font-size: 18px;
   }
 
   .button-log-in,
   .register-button,
   .compart,
   .play {
-    justify-content: center;
-    color: rgb(255, 255, 255);
-    background-color: rgb(249,133,214);
-    border-color: none;
-    border-radius: 3px;
+      justify-content: center;
+      color: rgb(255, 255, 255);
+      background-color: rgb(249,133,214);
+      border-color: none;
+      border-radius: 3px;
   }
 
   .play {
@@ -951,12 +975,22 @@ body {
   }
 
 /* menu */
+
+.menu-feed {
+  margin: 0 0 0 15px;
+}
+
 a {
-  color:#000;
+  color:rgb(255, 255, 255);
+  background-color: rgb(249,133,214);;
+}
+
+.logo-feed {
+  margin: 8px 0 0 10px;
 }
 
 .header {
-  background-color: #fff;
+  background-color: rgb(249,133,214);
   box-shadow:1px 1px 4px 0 rgba(0,0,0,.1);
   position: fixed;
   width: 100%;
@@ -972,11 +1006,9 @@ a {
   background-color: #fff;
 }
 
-.header ul a{
+.header ul li a{
   display: block;
-  outline: 1px solid red;
   padding: 20px;
-  border-right: 1px solid #aaa;
   text-decoration: none;
 }
 
@@ -997,7 +1029,7 @@ a {
 }
 
 .header .menu-icon .nav-icon{
-  background: #333;
+  background: rgb(255, 255, 255);
   display: block;
   height:2px;
   width: 18px;
@@ -1006,7 +1038,7 @@ a {
 }
 
 .header .menu-icon .nav-icon:before{
-  background: #333;
+  background: rgb(255, 255, 255);
   content:"";
   display:block;
   height: 100%;
@@ -1017,7 +1049,7 @@ a {
 }
 
 .header .menu-icon .nav-icon::after{
-  background: #333;
+  background: rgb(255, 255, 255);
   content:"";
   display:block;
   height: 100%;
@@ -1058,7 +1090,9 @@ a {
   }
 
 }
+
 }
+
 
 /* perfil */
 
@@ -1109,7 +1143,6 @@ a {
   font-family: 'Roboto', sans-serif;
   color: rgb(138, 138, 143);
   padding: 8em 0 0 0;
-  border-radius: 8px;
 }
 
 .b3 div{
