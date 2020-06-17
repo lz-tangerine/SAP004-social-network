@@ -7,12 +7,12 @@ const showDelete = (currentUser, userId, id) => {
   return ''
 }
 
-const commentTemplate = ({ text, userId }) => {
+const commentTemplate = ({ text, userName }) => {
   return `
     <div>
       <div class="img-name">
         <img src="imagens/astronautrosie.jpg" alt="" class="foto-comment">
-        <span class="user-post">${userId}</span>
+        <span class="user-comment">${userName}</span>
       </div>
       <p class="comment-text">${text}</p>
     </div>
