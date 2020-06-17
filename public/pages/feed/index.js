@@ -1,10 +1,12 @@
 import template from './template.js'
 import postTemplate from './postTemplate.js'
 
-const render = () => {
+const render = (user) => {
   const container = document.createElement('div');
 
-  container.innerHTML = template;
+  console.log(user);
+
+  container.innerHTML = template(user);
 
   return container;
 }

@@ -1,4 +1,5 @@
-const template = `
+const template = (user) => {
+  return `
 <section class="feed-container">
 
   <header class="header">
@@ -22,7 +23,7 @@ const template = `
       <img alt="capa" class="capa-feed" src="imagens/fundo.jpg"/>
       <img src="imagens/astronautrosie.jpg" alt="" class="foto-perfil">
       <div class="name-perfil">
-        <p id="userId" class="user-perfil">Player 1</p>
+        <p id="userId" class="user-perfil">${user}</p>
         <p id="typeGame" class="type-person">Jogos Plataforma</p>
       </div>
   </section>
@@ -43,5 +44,6 @@ const template = `
       <div id="timeline" class="timeline-feed"></div>
     </section>
 </section>
-`;
+`
+};
 export default template;
