@@ -7,7 +7,19 @@ const showDelete = (currentUser, userId, id) => {
     return ''
 }
 
-const postTemplate = ({ userId, userName, text, likes, id , currentUser}) => {
+const commentTemplate = ({text, userId}) => {
+    return`
+    <div>
+        <div>
+            <img src="imagens/astronautrosie.jpg" alt="" class="foto-feed">
+            <span class="user-post">${userId}</span>
+        </div>
+        <p class="post-text">${text}</p>
+    </div>
+    `
+}
+
+const postTemplate = ({ userId, userName, text, likes, id , currentUser, comments}) => {
     return `
         <div class="template-feed">
             <div class="feed-pessoal">
@@ -23,9 +35,18 @@ const postTemplate = ({ userId, userName, text, likes, id , currentUser}) => {
                     ${showDelete(currentUser, userId, id)}
                 </div>
                 <div class="icons-right">
-                    <img src="imagens/comentar.png" id="comentar" class="comentar-feed"/>
+                    <img src="imagens/comentar.png" id="comments-${id}" class="comentar-feed"/>
                     <img src="imagens/calendar.png" id="calendar" class="calendar-feed"/>
                     <img src="imagens/compartilhar.png" id="compartilhar" class="compartilhar-feed"/>
+                </div>
+                <div id="newCommentContainer-${id}" class="comment-container">
+                    <div class="comment">
+                        <img src="imagens/astronautrosie.jpg" alt="" class="foto-comment">
+                        <input type="text" data-id="${id}" id="addComment-${id}" class="input-comment"/>
+                    </div>
+                </div>
+                <div id="newCommentContainer-${id}" class="comment-container show">
+                    ${comments.map(commentTemplate).join('')}
                 </div>
             </div>
         </div>`
