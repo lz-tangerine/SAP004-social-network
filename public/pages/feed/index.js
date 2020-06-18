@@ -12,28 +12,44 @@ const render = (user) => {
 }
 
 const createPost = () => {
-  const text = document.getElementById('postText').value
-  const privatePost = document.getElementById('private').checked
-  const userId = firebase.auth().currentUser.uid
-  const userName = firebase.auth().currentUser.displayName
-  const post = {
-    text,
-    userId,
-    userName,
-    likes: 0,
-    private: privatePost,
-    created: new Date(),
-  }
-  firebase.firestore().collection('posts').add(post);
+    const text = document.getElementById('postText').value
+    const privatePost = document.getElementById('private').checked
+    const userId = firebase.auth().currentUser.uid
+    const userName = firebase.auth().currentUser.displayName
+    const post = {
+        text,
+        userId,
+        userName,
+        likes:0,
+        private: privatePost,
+        created: new Date(),
+        comments:[],
+    }
+    firebase.firestore().collection('posts').add(post);
 }
 
 const likePost = () => {
-  const id = event.target.dataset.id;
-  firebase.firestore().collection('posts').doc(id).get()
+    const id = event.target.dataset.id;
+    firebase.firestore().collection('posts').doc(id).get()
     .then((post) => {
       const likes = post.data().likes + 1;
       firebase.firestore().collection('posts').doc(id).update({
         likes,
+      });
+    });
+}
+
+const commentPost = (id, text) => {
+    firebase.firestore().collection('posts').doc(id).get()
+    .then((post) => {
+      const comments = post.data().comments;
+      const userId = firebase.auth().currentUser.uid
+      const comment = {text, userId}
+      
+      comments.push(comment)
+      console.log(comments);
+      firebase.firestore().collection('posts').doc(id).update({
+        comments,
       });
     });
 }
@@ -55,17 +71,40 @@ const addLikeEvent = (post) => {
   likeButton.addEventListener('click', likePost)
 }
 
-const addEvents = (post) => {
-  addLikeEvent(post);
-  addDeleteEvent(post);
+const showCommentButton = (post) => {
+    const commentButton = document.getElementById(`comments-${post.id}`)
+    commentButton.addEventListener('click',() => {
+        const newCommentContainer = document.getElementById(`newCommentContainer-${post.id}`)
+        newCommentContainer.classList.toggle('show')
+    })
+}
+
+const addComment = (post) => {
+    const inputEnter = document.getElementById(`addComment-${post.id}`);
+    inputEnter.addEventListener('keyup', function(e){
+        var key = e.which || e.keyCode;
+        if (key == 13) { // codigo da tecla enter
+        // colocas aqui a tua função a rodar
+            commentPost(post.id, inputEnter.value)
+        }
+    });
 }
 
 
+const addEvents = (post) => {
+    addLikeEvent(post);
+    addDeleteEvent(post);
+    showCommentButton(post);
+    addComment(post);
+}
+
 const showFeed = () => {
-  const currentUser = firebase.auth().currentUser.uid
-  const timeline = document.getElementById('timeline')
-  firebase.firestore().collection("posts").orderBy('created', 'desc')
-    .onSnapshot(function (querySnapshot) {
+    const currentUser = firebase.auth().currentUser.uid
+    const timeline = document.getElementById('timeline')
+    firebase.firestore()
+    .collection("posts")
+    .orderBy('created', 'desc')
+    .onSnapshot(function(querySnapshot) {
       firebase.firestore().collection("users").orderBy('user_uid', 'desc')
       .onSnapshot(function (doc_users) {
         let users = {};
@@ -74,20 +113,25 @@ const showFeed = () => {
           users[user.user_uid] = user;
         });
 
-        let posts = [];
-        querySnapshot.forEach(function (doc) {
-          const post = doc.data()
-          post.id = doc.id
-          post.user = users[post.userId];
-          post.currentUser = currentUser
-          posts.push(post);
+        var posts = [];
+        querySnapshot.forEach(function(doc) {
+            const post = doc.data()
+            post.id = doc.id
+            post.user = users[post.userId];
+            post.currentUser = currentUser
+            if(post.private && post.userId===currentUser){
+                posts.push(post);
+            } else if(!post.private){
+                posts.push(post)
+            }
         });
-
+        
         const content = posts.map(postTemplate)
         timeline.innerHTML = content.join('');
-        posts.forEach(addEvents);
+        posts.forEach(addEvents)
+
       });
-    });
+    })
 }
 
 const init = () => {
