@@ -66,17 +66,27 @@ const showFeed = () => {
   const timeline = document.getElementById('timeline')
   firebase.firestore().collection("posts").orderBy('created', 'desc')
     .onSnapshot(function (querySnapshot) {
-      var posts = [];
-      querySnapshot.forEach(function (doc) {
-        const post = doc.data()
-        post.id = doc.id
-        post.currentUser = currentUser
-        posts.push(post);
-      });
+      firebase.firestore().collection("users").orderBy('user_uid', 'desc')
+      .onSnapshot(function (doc_users) {
+        let users = {};
+        doc_users.forEach(function (doc) {
+          let user = doc.data();
+          users[user.user_uid] = user;
+        });
 
-      const content = posts.map(postTemplate)
-      timeline.innerHTML = content.join('');
-      posts.forEach(addEvents)
+        let posts = [];
+        querySnapshot.forEach(function (doc) {
+          const post = doc.data()
+          post.id = doc.id
+          post.user = users[post.userId];
+          post.currentUser = currentUser
+          posts.push(post);
+        });
+
+        const content = posts.map(postTemplate)
+        timeline.innerHTML = content.join('');
+        posts.forEach(addEvents);
+      });
     });
 }
 

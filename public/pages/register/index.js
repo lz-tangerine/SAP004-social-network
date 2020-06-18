@@ -63,8 +63,7 @@ const saverUserData = () => {
   const surname = document.getElementById('surname');
   const status = document.getElementById('status');
   const date = document.getElementById('date');
-  
-  console.log('PROMISE....', firebase.auth().currentUser.uid);
+
   const user = {
     name: name.value,
     surname: surname.value,
@@ -93,13 +92,10 @@ const create = () => {
   } else if (password === passwordConfirm) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((data) => {
-        console.log("USER save", data);
         let inserted = saverUserData();
 
         inserted.then((data) => {
-          console.log('HASH feed redirect upload foto..', data);
           uploadFoto(data);
-          console.log('UPLOADX..', data);
           window.location.hash = '#feed';
         }).catch((error) => {
           alert(`Erro : ${error.code} `);

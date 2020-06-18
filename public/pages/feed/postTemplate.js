@@ -7,11 +7,11 @@ const showDelete = (currentUser, userId, id) => {
     return ''
 }
 
-const postTemplate = ({ userId, userName, text, likes, id , currentUser}) => {
+const postTemplate = ({ userId, userName, text, likes, id, currentUser, user}) => {
     return `
         <div class="template-feed">
             <div class="feed-pessoal">
-                <img src="imagens/astronautrosie.jpg" alt="" class="foto-feed">
+                <img src="${user && user.photo ? user.photo : 'imagens/astronautrosie.jpg'}" alt="" class="foto-feed">
                 <span class="user-post">${userName}</span>
             </div>
             <div class="itens-text">

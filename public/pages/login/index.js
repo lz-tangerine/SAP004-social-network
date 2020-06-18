@@ -24,15 +24,38 @@ const login = () => {
 }
 const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(() => {
-    window.location = '#feed';
+  firebase.auth().signInWithPopup(provider).then((data) => {
+    const user = {
+      name: data.user.displayName,
+      surname: "",
+      status: "",
+      date: "",
+      photo: data.user.photoURL,
+      user_uid: data.user.uid,
+    };
+
+    firebase.firestore().collection('users').add(user).finally((data) => {
+      window.location.hash = '#feed';
+    });
+
   });
 }
 
 const loginFacebook= () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(provider).then(() => {
-    window.location = '#feed';
+    const user = {
+      name: data.user.displayName,
+      surname:"",
+      status: "",
+      date: "",
+      photo: data.user.photoURL,
+      user_uid: data.user.uid,
+    };
+
+    firebase.firestore().collection('users').add(user).finally((data) => {
+      window.location.hash = '#feed';
+    });
   });
 }
 

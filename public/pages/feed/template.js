@@ -21,9 +21,9 @@ const template = (user) => {
   <main class="feed-post">
     <section class="photo-name">
       <img alt="capa" class="capa-feed" src="imagens/fundo.jpg"/>
-      <img src="imagens/astronautrosie.jpg" alt="" class="foto-perfil">
+      <img src="${user.photo ? user.photo : 'imagens/astronautrosie.jpg'}" alt="" class="foto-perfil">
       <div class="name-perfil">
-        <p id="userId" class="user-perfil">${user}</p>
+        <p id="userId" class="user-perfil">${user.name}</p>
         <p id="typeGame" class="type-person">Jogos Plataforma</p>
       </div>
   </section>
