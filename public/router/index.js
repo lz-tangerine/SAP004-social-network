@@ -8,7 +8,6 @@ const renderPage = () => {
     // console.log('RENDER PAGE....');
     pageContainer.innerHTML='';
     const page = validateHash(window.location.hash);
-    console.log('PAGE X..', page);
  
     const route = routes[page];
     if (page != 'login' && page != 'register' && page != 'logout') {
@@ -17,15 +16,17 @@ const renderPage = () => {
                 firebase.firestore().collection('users')
                  .where('user_uid', '==', userAuth.uid).get()
                  .then(docs => {
-                    if (!docs.empty) {
-                        console.log('NOT EMPTY')
-                        docs.forEach(function(doc) {
-                            pageContainer.appendChild(route.render(doc.data()));
-                            route.init();
+                    if (docs.size == 1) {
+                        let doc = {};
+                        docs.forEach(function(d) {
+                            doc = d.data();
                         });
+            
+                        pageContainer.innerHTML='';
+                        pageContainer.appendChild(route.render(doc));
+                        route.init();
                     } else {
-                        console.log('USER EMPTY');
-                        window.location.hash = '#updateAccount';
+                        console.log('feed docs size erro..', docs.size)
                     }
                  });
             } else {
@@ -34,6 +35,7 @@ const renderPage = () => {
             }
         });
     } else {
+        pageContainer.innerHTML='';
         pageContainer.appendChild(route.render());
         route.init();
     }

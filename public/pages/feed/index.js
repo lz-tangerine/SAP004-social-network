@@ -139,7 +139,6 @@ const showFeed = () => {
 }
 
 const init = () => {
-  console.log('incializaou')
   const postButton = document.getElementById('createPost');
   postButton.addEventListener('click', createPost);
   showFeed();
