@@ -2,8 +2,6 @@ const template = (user) => {
   return `
 <div class="profile">
 
-
-
   <div class="a1 header" >
       <nav id="menu-feed">
         <input id="menu-hamburguer" type="checkbox" class="menu-btn"/>
@@ -15,12 +13,11 @@ const template = (user) => {
           <li><a href="#logout" class="menu-item">Sair</a></li>
         </ul>
       </nav>
+
   </div>
+
   <div class="b1 header" >
-    <img alt="logo-nav" class="feed-logo" src="imagens/logo-name.png"/>
-  </div>
-  <div class="c1 header" >
-    <a href="#logout" class="menu-item">Sair</a>
+    <img alt="logo-nav" class="logo" src="imagens/logo-name.png"/>
   </div>
 
 

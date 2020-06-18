@@ -10,6 +10,7 @@ const routes = {
     feed,
     profile,
     logout,
+
 }
 
 export default routes;

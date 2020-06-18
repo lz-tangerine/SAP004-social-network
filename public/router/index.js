@@ -48,6 +48,7 @@ const router = () => {
     window.addEventListener('hashchange', () => {
         renderPage();
     })
+
 }
 
 export default router;

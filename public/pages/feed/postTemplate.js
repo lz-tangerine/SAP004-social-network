@@ -1,10 +1,10 @@
 
 const showDelete = (currentUser, userId, id) => {
-    if (userId === currentUser) {
-        return `<img src="imagens/lixo-01.png" id="delete-${id}" data-id="${id}" class="delete"/>`
-    }
+  if (userId === currentUser) {
+  return `<img src="imagens/lixo-01.png" id="delete-${id}" data-id="${id}" class="delete"/>`
+  }
 
-    return ''
+  return ''
 }
 
 const commentTemplate = ({text, userId}) => {
@@ -51,6 +51,7 @@ const postTemplate = ({ userId, userName, text, likes, id , currentUser, comment
                 </div>
             </div>
         </div>`
+
 }
 
 export default postTemplate;
