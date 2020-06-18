@@ -11,7 +11,7 @@ const template = `
           <li><a href="#perfil" class="menu-item">Perfil</a></li>
           <li><a href="#feed" class="menu-item">Feed</a></li>
           <li><a href="#chat" class="menu-item">Chat</a></li>
-          <li><a href="#login" class="menu-item">Sair</a></li>
+          <li><a href="#logout" class="menu-item">Sair</a></li>
         </ul>
       </nav>
   </div>
