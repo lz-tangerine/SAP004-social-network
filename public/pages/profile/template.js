@@ -1,4 +1,5 @@
-const template = `
+const template = (user) => {
+  return `
 <div class="profile">
 
 
@@ -8,7 +9,7 @@ const template = `
         <input id="menu-hamburguer" type="checkbox" class="menu-btn"/>
         <label for="menu-hamburguer" class="menu-icon"><span class="nav-icon"></span></label>
         <ul class="menu">
-          <li><a href="#perfil" class="menu-item">Perfil</a></li>
+          <li><a href="#profile" class="menu-item">Perfil</a></li>
           <li><a href="#feed" class="menu-item">Feed</a></li>
           <li><a href="#chat" class="menu-item">Chat</a></li>
           <li><a href="#logout" class="menu-item">Sair</a></li>
@@ -19,13 +20,13 @@ const template = `
     <img alt="logo-nav" class="feed-logo" src="imagens/logo-name.png"/>
   </div>
   <div class="c1 header" >
-    <a href="#login" class="menu-item">Sair</a>
+    <a href="#logout" class="menu-item">Sair</a>
   </div>
 
 
   <div class="b2">
-    <img src="imagens/foto.png" width="100">
-    <div>nome jogador</div>
+    <img src="${user.photo ? user.photo : 'imagens/foto.png'}" width="100">
+    <div>${user.name}</div>
   </div>
 
   <div class="b3">
@@ -56,7 +57,8 @@ const template = `
 
 
 </div>
-`;
+`
+};
 
 export default template;
 

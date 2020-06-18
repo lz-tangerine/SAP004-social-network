@@ -1,19 +1,15 @@
 import template from './template.js'
 
-const render = ()  => {
+const render = (user)  => {
   const container = document.createElement('div');
 
-  container.innerHTML = template;
+  container.innerHTML = template(user);
 
   return container;
 }
 
 const init =  () => {
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      console.log('incializou')
-    }
-  });
+  
 }
 export default {
   render,
