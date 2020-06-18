@@ -1100,7 +1100,7 @@ a {
   display: grid;
   grid-template-rows: 10vh 20vh 28vh 35vh;
   grid-template-columns: 12.5vh;
-  grid-template-areas: "a1 a1 b1 b1 b1 c1 c1"
+  grid-template-areas: "a1 a1 b1 b1 b1 b1 b1"
                         ". b2 b2 b2 b2 b2 ."
                         ". b3 b3 b3 b3 b3 ."
                         ". . . . b4 b4 .";
@@ -1114,10 +1114,13 @@ a {
   grid-area: b1;
 }
 
-
-.c1 {
-  grid-area: c1;
+.logo{
+    display: block;
+    width: 40%;
+    height: 45%;
+    justify-content: center;
 }
+
 
 .b2 {
   display: inline-grid;
@@ -1143,6 +1146,7 @@ a {
   font-family: 'Roboto', sans-serif;
   color: rgb(138, 138, 143);
   padding: 8em 0 0 0;
+  height: auto;
 }
 
 .b3 div{

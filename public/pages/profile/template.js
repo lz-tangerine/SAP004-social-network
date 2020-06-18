@@ -1,27 +1,22 @@
 const template = `
 <div class="profile">
 
-
-
   <div class="a1 header" >
-      <nav id="menu-feed">
-        <input id="menu-hamburguer" type="checkbox" class="menu-btn"/>
-        <label for="menu-hamburguer" class="menu-icon"><span class="nav-icon"></span></label>
-        <ul class="menu">
-          <li><a href="#perfil" class="menu-item">Perfil</a></li>
-          <li><a href="#feed" class="menu-item">Feed</a></li>
-          <li><a href="#chat" class="menu-item">Chat</a></li>
-          <li><a href="#login" class="menu-item">Sair</a></li>
-        </ul>
-      </nav>
-  </div>
-  <div class="b1 header" >
-    <img alt="logo-nav" class="feed-logo" src="imagens/logo-name.png"/>
-  </div>
-  <div class="c1 header" >
-    <a href="#login" class="menu-item">Sair</a>
+    <nav id="menu-feed">
+      <input id="menu-hamburguer" type="checkbox" class="menu-btn"/>
+      <label for="menu-hamburguer" class="menu-icon"><span class="nav-icon"></span></label>
+      <ul class="menu">
+        <li><a href="#profile" class="menu-item">Perfil</a></li>
+        <li><a href="#feed" class="menu-item">Feed</a></li>
+        <li><a href="#chat" class="menu-item">Chat</a></li>
+        <li><a href="#login" class="menu-item">Sair</a></li>
+      </ul>
+    </nav>
   </div>
 
+  <div class="b1 header" >
+    <img alt="logo-nav" class="logo" src="imagens/logo-name.png"/>
+  </div>
 
   <div class="b2">
     <img src="imagens/foto.png" width="100">

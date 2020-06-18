@@ -4,10 +4,10 @@ import feed from '../pages/feed/index.js';
 import profile from '../pages/profile/index.js';
 
 const routes = {
-    login, 
-    register,
-    feed,
-    profile,
+  login, 
+  register,
+  feed,
+  profile,
 }
 
 export default routes;

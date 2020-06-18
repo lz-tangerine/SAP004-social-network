@@ -6,10 +6,10 @@ const template = `
       <input id="menu-hamburguer" type="checkbox" class="menu-btn"/>
       <label for="menu-hamburguer" class="menu-icon"><span class="nav-icon"></span></label>
       <ul class="menu">
-        <li><a href="#perfil" class="menu-item">Perfil</a></li>
+        <li><a href="#profile" class="menu-item">Perfil</a></li>
         <li><a href="#feed" class="menu-item">Feed</a></li>
         <li><a href="#chat" class="menu-item">Chat</a></li>
-        <li><a href="#login" class="menu-item">login</a></li>
+        <li><a href="#login" class="menu-item">Sair</a></li>
       </ul>
     </nav>
     <div>
