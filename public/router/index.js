@@ -8,9 +8,10 @@ const renderPage = () => {
     // console.log('RENDER PAGE....');
     pageContainer.innerHTML='';
     const page = validateHash(window.location.hash);
+    console.log('PAGE X..', page);
+ 
     const route = routes[page];
-    if (page != 'login' && page != 'register' && page != 'updateAccount') {
-        // console.log('PAGE..', page);
+    if (page != 'login' && page != 'register' && page != 'logout') {
         firebase.auth().onAuthStateChanged(function (userAuth) {
             if (userAuth) {
                 firebase.firestore().collection('users')
