@@ -47,7 +47,7 @@ const postTemplate = ({ userId, userName, text, likes, id , currentUser, comment
                     </div>
                 </div>
                 <div id="newCommentContainer-${id}" class="comment-container show">
-                    ${comments.map(commentTemplate).join('')}
+                    ${comments ? comments.map(commentTemplate).join('') : ''}
                 </div>
             </div>
         </div>`
