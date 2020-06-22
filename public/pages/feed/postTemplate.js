@@ -7,7 +7,18 @@ const showDelete = (currentUser, userId, id) => {
   return ''
 }
 
-const commentTemplate = ({ text, userName }) => {
+const showDeleteComment = (currentUser, userId, id, index) => {
+  console.log('teste')
+  console.log({userId, currentUser})
+  if (userId === currentUser) {
+    return `<img src="imagens/lixo-01.png" id="delete-comment-${id}-${index}" data-id="${id}" data-index="${index}" class="delete-comment"/>`
+  }
+
+  return ''
+}
+
+
+const commentTemplate = (currentUser, postId) => ({ text, userName, userId }, index) => {
   return `
     <div>
       <div class="img-name">
@@ -15,6 +26,9 @@ const commentTemplate = ({ text, userName }) => {
         <span class="user-comment">${userName}</span>
       </div>
       <p class="comment-text">${text}</p>
+      <div class="comments">
+        ${showDeleteComment(currentUser, userId, postId, index)}
+      </div>
     </div>
     `
 }
@@ -27,7 +41,7 @@ const postTemplate = ({ userId, userName, text, likes, id, currentUser, comments
         <span class="user-post">${userName}</span>
       </div>
       <div class="itens-text">
-        <p class="post-text">${text}</p>
+        <p class="post-text" id="post-text-${id}">${text}</p>
       </div>
       <div class="itens-post">
         <div class="icons-left"> 
@@ -36,7 +50,7 @@ const postTemplate = ({ userId, userName, text, likes, id, currentUser, comments
         </div>
         <div class="icons-right">
           <img src="imagens/comentar.png" id="comments-${id}" class="comentar-feed"/>
-          <img src="imagens/calendar.png" id="calendar" class="calendar-feed"/>
+          <img src="imagens/editar.png" class="edit-comment" id="edit-${id}" data-id="${id}"/>
           <img src="imagens/compartilhar.png" id="compartilhar" class="compartilhar-feed"/>
         </div>
       </div>
@@ -47,7 +61,7 @@ const postTemplate = ({ userId, userName, text, likes, id, currentUser, comments
         </div>
       </div>
       <div class="comment-container show">
-        ${comments.map(commentTemplate).join('')}
+        ${comments.map(commentTemplate(currentUser, id)).join('')}
       </div>
     </div>`
 }
