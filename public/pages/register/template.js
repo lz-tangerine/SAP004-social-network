@@ -2,6 +2,7 @@ const template = `
 <section class="container">
   <form enctype="multipart/form-data">
 
+
     <section class="logo-login">
       <div class="logo">
         <img alt="logo" class="control-logo" src="imagens/logo.png"/>
@@ -45,7 +46,7 @@ const template = `
           <input type="radio" name="radio" id="gender-masc" class="gender-camp">
           <label for="gender-masc" class="gender">Masculino</label>
         </div>
-        <div class="female">
+          <div class="female">
           <input type="radio" name="radio" id="gender-fem" class="gender-camp">
           <label for="gender-fem" class="gender">Feminino</label>
         </div>
@@ -57,12 +58,11 @@ const template = `
       <div class="img_photo">
         <label for="photo" class="´photo-class">Envie uma foto</label>
         <input type="file" name="photo" class="photo-camp">    
-    </div>
+      </div>
       <button type="button" id="register" class="register-button">Criar conta</button>
       <span id="loginError" class="error"></span> 
-      <a href="#feed" class="button-back">Voltar para o login</a>
-  </section>
-
+      <a href="#" class="button-back">Voltar para o login</a>
+    </section>
   </form>
 </section>  
 `;

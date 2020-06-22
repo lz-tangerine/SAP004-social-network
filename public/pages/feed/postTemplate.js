@@ -1,19 +1,33 @@
 
 const showDelete = (currentUser, userId, id) => {
   if (userId === currentUser) {
-  return `<img src="imagens/lixo-01.png" id="delete-${id}" data-id="${id}" class="delete"/>`
+    return `<img src="imagens/lixo-01.png" id="delete-${id}" data-id="${id}" class="delete"/>`
+  }
+
+  return ''
+}
+const showDeleteComment = (currentUser, userId, id, index) => {
+  console.log('teste')
+  console.log({userId, currentUser})
+  if (userId === currentUser) {
+    return `<img src="imagens/lixo-01.png" id="delete-comment-${id}-${index}" data-id="${id}" data-index="${index}" class="delete-comment"/>`
   }
 
   return ''
 }
 
-  const commentTemplate = ({text, userId}) => {
-  return`
-  <div>
+
+const commentTemplate = (currentUser, postId) => ({ text, userName, userId }, index) => {
+  return `
     <div>
-      <img src="imagens/astronautrosie.jpg" alt="" class="foto-feed">
-      <span class="user-post">${userId}</span>
-      <img src="imagens/lixo-01.png"/ class="delete"/>
+      <div class="img-name">
+        <img src="imagens/astronautrosie.jpg" alt="" class="foto-comment">
+        <span class="user-comment">${userName}</span>
+      </div>
+      <p class="comment-text">${text}</p>
+      <div class="comments">
+        ${showDeleteComment(currentUser, userId, postId, index)}
+      </div>
     </div>
     <p class="post-text">${text}</p>
   </div>
@@ -51,7 +65,5 @@ const postTemplate = ({ userId, userName, text, likes, id , currentUser, comment
         </div>
       </div>
       </div>`
-
 }
-
 export default postTemplate;

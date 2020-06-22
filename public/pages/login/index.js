@@ -97,6 +97,7 @@ const render = ()  => {
 }
 
 const init =  () => {
+  console.log('incializou')
   const loginButton = document.getElementById('login');
   loginButton.addEventListener('click', login);
   const googleButton = document.getElementById('loginGoogle');

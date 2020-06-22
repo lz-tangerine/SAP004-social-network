@@ -5,11 +5,11 @@ import profile from '../pages/profile/index.js';
 import logout from '../pages/logout/index.js';
 
 const routes = {
-    login, 
-    register,
-    feed,
-    profile,
-    logout,
+  login, 
+  register,
+  feed,
+  profile,
+  logout,
 
 }
 
