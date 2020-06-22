@@ -57,5 +57,6 @@ const template = (user) => {
 `
 };
 
+
 export default template;
 

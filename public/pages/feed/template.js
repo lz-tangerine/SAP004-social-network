@@ -10,9 +10,7 @@ const template = (user) => {
         <li><a href="#profile" class="menu-item">Perfil</a></li>
         <li><a href="#feed" class="menu-item">Feed</a></li>
         <li><a href="#chat" class="menu-item">Chat</a></li>
-
         <li><a href="#logout" class="menu-item">Sair</a></li>
-
       </ul>
     </nav>
     <div>

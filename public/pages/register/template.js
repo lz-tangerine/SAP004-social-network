@@ -60,7 +60,7 @@ const template = `
     </div>
       <button type="button" id="register" class="register-button">Criar conta</button>
       <span id="loginError" class="error"></span> 
-      <a href="#" class="button-back">Voltar para o login</a>
+      <a href="#feed" class="button-back">Voltar para o login</a>
   </section>
 
   </form>
