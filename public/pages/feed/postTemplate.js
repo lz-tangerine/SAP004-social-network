@@ -43,7 +43,7 @@ const commentTemplate = (currentUser, postId) => ({ text, userName, userId }, in
   `
   }
 
-const postTemplate = ({ userId, userName, text, likes, id , currentUser, comments, user}) => {
+const postTemplate = ({ userId, userName, text, likes, id , currentUser, comments, user, whoLiked}) => {
   return `
     <div class="template-feed">
       <div class="feed-pessoal">
