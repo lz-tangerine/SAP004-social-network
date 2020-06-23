@@ -43,7 +43,6 @@ const init =  () => {
 
 
   document.querySelector('.imgPhoto').addEventListener('click', (ev) => {
-    console.log('IMG PHOTO');
     let inputFile = ev.target.parentElement.querySelector('input[type=file]')
     inputFile.style.display = "block"
   });
@@ -109,7 +108,6 @@ let uploadFoto = (data) => {
 
 
   let changePhoto = (ev) => {
-    console.log('CHANGE PHOTO', ev)
 
     var query = firebase.firestore().collection('users').where('user_uid', '==', firebase.auth().currentUser.uid)
     query.get().then(function(users) {

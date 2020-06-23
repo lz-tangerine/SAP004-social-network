@@ -35,7 +35,7 @@ const template = (user) => {
       </div>
       <textarea type="text" id="postText" name="postText" class="post"></textarea> 
       <div class="button-post">
-        <img src="imagens/foto.png" class="img-photo"/>
+        <img src="${user.photo ? user.photo : 'imagens/astronautrosie.jpg'}" alt="" class="img-photo">
         <button id="createPost" class="play">Compartilhar</button>
       </div>
     </section>

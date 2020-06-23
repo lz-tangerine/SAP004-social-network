@@ -120,7 +120,6 @@ const editComment = (id, text, index) => {
     .then((post) => {
       const comments = post.data().comments;
       comments[index].text = text;
-      console.log(comments)
       firebase.firestore().collection('posts').doc(id).update({
         comments,
       });
@@ -202,26 +201,49 @@ const addEvents = (post) => {
 const showFeed = () => {
   const currentUser = firebase.auth().currentUser.uid
   const timeline = document.getElementById('timeline')
-  firebase.firestore()
-    .collection("posts")
-    .orderBy('created', 'desc')
-    .onSnapshot(function (querySnapshot) {
-      var posts = [];
-      querySnapshot.forEach(function (doc) {
-        const post = doc.data()
-        post.id = doc.id
-        post.currentUser = currentUser
-        if (post.private && post.userId === currentUser) {
-          posts.push(post);
-        } else if (!post.private) {
-          posts.push(post)
-        }
-      });
 
-      const content = posts.map(postTemplate)
-      timeline.innerHTML = content.join('');
-      posts.forEach(addEvents)
-    });
+  firebase.firestore()
+  .collection("users")
+  .orderBy("user_uid", "asc")
+  .onSnapshot((docUsers) => {
+    let users = {}
+    docUsers.forEach((doc) => {
+      let user = doc.data()
+      users[user.user_uid] = user
+    })
+
+
+    firebase.firestore()
+      .collection("posts")
+      .orderBy('created', 'desc')
+      .onSnapshot(function (querySnapshot) {
+        var posts = [];
+        querySnapshot.forEach(function (doc) {
+          const post = doc.data()
+          post.id = doc.id
+          post.currentUser = currentUser
+          post.user = users[post.userId]
+  
+          let comments = []
+          post.comments.forEach((comment) => {
+            comments.push({user: users[comment.userId], ...comment})
+          });
+          post.comments = comments
+
+          if (post.private && post.userId === currentUser) {
+            posts.push(post);
+          } else if (!post.private) {
+            posts.push(post)
+          }
+        });
+  
+        const content = posts.map(postTemplate)
+        timeline.innerHTML = content.join('');
+        posts.forEach(addEvents)
+      });
+  })
+
+
 }
 
 const init = () => {
