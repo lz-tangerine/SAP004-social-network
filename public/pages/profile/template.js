@@ -24,7 +24,7 @@ const template = (user) => {
   <div class="b2">
     <form enctype="multipart/form-data" onSubmit="return false">
       <img class="imgPhoto" src="${user.photo ? user.photo : 'imagens/foto.png'}" > 
-      <input type="file" name="inputFilePhoto" style="display:none">
+      <input type="file" name="photo" class="inputFilePhoto" style="display:none">
       <div class="al">
         <div class="userName">${user.name}</div>
         <img src="imagens/editar.png" alt="" class="btEdit">
