@@ -18,22 +18,28 @@ const createPost = () => {
     text,
     userId,
     userName,
-    likes: 0,
     private: privatePost,
     created: new Date(),
     comments: [],
+    whoLiked: [],
   }
   firebase.firestore().collection('posts').add(post);
 }
 
 const likePost = () => {
   const id = event.target.dataset.id;
+  const userId =  firebase.auth().currentUser.uid
   firebase.firestore().collection('posts').doc(id).get()
     .then((post) => {
-      const likes = post.data().likes + 1;
-      firebase.firestore().collection('posts').doc(id).update({
-        likes,
-      });
+      const whoLiked = post.data().whoLiked
+      const userAlreadyLiked = whoLiked.includes(userId)
+      if (!userAlreadyLiked){
+        whoLiked.push(userId)
+        firebase.firestore().collection('posts').doc(id).update({
+          whoLiked,
+        });
+      }
+    
     });
 }
 
@@ -42,7 +48,8 @@ const commentPost = (id, text) => {
     .then((post) => {
       const comments = post.data().comments;
       const userName = firebase.auth().currentUser.displayName
-      const comment = { text, userName}
+      const userId =  firebase.auth().currentUser.uid
+      const comment = { text, userName, userId}
 
       comments.push(comment)
       firebase.firestore().collection('posts').doc(id).update({
@@ -63,6 +70,72 @@ const addDeleteEvent = (post) => {
   }
 }
 
+const postEditEvent = (event) => {
+  const id = event.target.dataset.id;
+  const postContent = document.getElementById(`post-text-${id}`)
+  postContent.contentEditable = true;
+  postContent.addEventListener('keyup', function (e) {
+    const key = e.keyCode;
+    if(key==13){
+      editPost(id, postContent.innerText)
+      postContent.contentEditable = false;
+    }
+  })
+}
+
+const editPost = (id, text) => {
+  firebase.firestore().collection('posts').doc(id).get()
+    .then(() => {
+      firebase.firestore().collection('posts').doc(id).update({
+        text,
+      });
+    });
+};
+
+
+const addPostEditEvent = (post) => {
+  const editButton = document.getElementById(`edit-${post.id}`)
+  if (editButton) {
+    editButton.addEventListener('click', postEditEvent)
+  }
+}
+
+const commentEditEvent = (event) => {
+  const id = event.target.dataset.id;
+  const index = event.target.dataset.index;
+  const commentContent = document.getElementById(`comment-text-${id}-${index}`)
+  commentContent.contentEditable = true;
+  commentContent.addEventListener('keyup', function (e) {
+    const key = e.keyCode;
+    if(key==13){
+      editComment(id, commentContent.innerText, index)
+      commentContent.contentEditable = false;
+    }
+  })
+}
+
+const editComment = (id, text, index) => {
+  firebase.firestore().collection('posts').doc(id).get()
+    .then((post) => {
+      const comments = post.data().comments;
+      comments[index].text = text;
+      console.log(comments)
+      firebase.firestore().collection('posts').doc(id).update({
+        comments,
+      });
+    });
+};
+
+
+const addCommentEditEvent = (post) => {
+  post.comments.forEach( (item, index) => {
+    const editButton = document.getElementById(`edit-comment-${post.id}-${index}`)
+    if (editButton) {
+      editButton.addEventListener('click', commentEditEvent)
+    }
+  })
+}
+
 const addLikeEvent = (post) => {
   const likeButton = document.getElementById(`like-${post.id}`)
   likeButton.addEventListener('click', likePost)
@@ -79,19 +152,44 @@ const showCommentButton = (post) => {
 const addComment = (post) => {
   const inputEnter = document.getElementById(`addComment-${post.id}`);
   inputEnter.addEventListener('keyup', function (e) {
-    var key = e.which || e.keyCode;
+    var key = e.keyCode;
     if (key == 13) { // codigo da tecla enter
-      // colocas aqui a tua função a rodar
       commentPost(post.id, inputEnter.value)
     }
   });
 }
+
+const deleteComment= (event) => {
+  const id = event.target.dataset.id;
+  const commentIndex = event.target.dataset.index;
+  firebase.firestore().collection('posts').doc(id).get()
+    .then((post) => {
+      const comments = post.data().comments;
+      comments.splice(commentIndex, 1);
+      firebase.firestore().collection('posts').doc(id).update({
+        comments,
+      });
+    });
+}
+
+const addCommentDeleteEvent = (post) => {
+  post.comments.forEach( (item, index) => {
+    const deleteButton = document.getElementById(`delete-comment-${post.id}-${index}`)
+    if (deleteButton) {
+      deleteButton.addEventListener('click', deleteComment)
+    }
+  })
+}
+
 
 const addEvents = (post) => {
   addLikeEvent(post);
   addDeleteEvent(post);
   showCommentButton(post);
   addComment(post);
+  addCommentDeleteEvent(post);
+  addPostEditEvent(post);
+  addCommentEditEvent(post);
 }
 
 const showFeed = () => {
