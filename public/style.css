@@ -1148,7 +1148,7 @@ type-person {
 	.header {
 		background-color: rgb(249, 133, 214);
 		box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
-		position: fixed;
+
 		width: 100%;
 		z-index: 3;
 		display: flex;
@@ -1311,94 +1311,6 @@ type-person {
 
 .profile {
 	display: grid;
-	grid-template-rows: 10vh 20vh 28vh 35vh;
-	grid-template-columns: 12.5vh;
-	grid-template-areas:
-		"a1 a1 b1 b1 b1 c1 c1"
-		". b2 b2 b2 b2 b2 ."
-		". b3 b3 b3 b3 b3 ."
-		". . . . b4 b4 .";
-}
-
-.a1 {
-	grid-area: a1;
-}
-
-.b1 {
-	grid-area: b1;
-}
-
-.c1 {
-	grid-area: c1;
-}
-
-.b2 {
-	display: inline-grid;
-	grid-area: b2;
-	justify-content: center;
-	background: linear-gradient(
-			180deg,
-			rgba(115, 25, 157, 0.41) 0%,
-			rgba(237, 61, 167, 0.5) 100%
-		),
-		rgba(173, 56, 228, 0.5);
-	border-radius: 8px;
-	font-family: "Roboto", sans-serif;
-	color: rgb(138, 138, 143);
-	z-index: 10;
-}
-
-.b2 img {
-	padding: 6em 0 0 0;
-	height: 150px;
-	width: 150px;
-}
-
-.b3 {
-	grid-area: b3;
-	background: #faf8f8;
-	font-size: 16px;
-	font-family: "Roboto", sans-serif;
-	color: rgb(138, 138, 143);
-	padding: 8em 0 0 0;
-}
-
-.b3 div {
-	display: flex;
-	padding: 0.4em;
-}
-
-.img3 {
-	width: 30px;
-}
-
-.b4 {
-	grid-area: b4;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	background: rgba(250, 248, 248, 0.5);
-	border-radius: 0px 0px 8px 8px;
-}
-
-.b4 > div {
-	display: flex;
-	justify-content: space-between;
-	margin: 1em;
-}
-.b4 img {
-	width: 50px;
-	height: 50px;
-}
-.textArea4 {
-	width: 100%;
-	height: 100px;
-	border-radius: 8px;
-}
-
-/* perfil */
-/* .profile {
-	display: grid;
 	grid-template-rows: 60px 200px 1fr 1fr;
 	grid-template-columns: 12.5vh;
 	grid-template-areas:
@@ -1416,13 +1328,20 @@ type-person {
 	grid-area: b1;
 }
 
-.logo {
+.logo-name {
 	display: block;
-	width: 40%;
-	height: 45%;
+	width: 35%;
+	height: 81%;
 	justify-content: center;
 }
 
+.b2 img {
+	margin: 6em 0 0 0;
+	border-radius: 50%;
+	height: 150px;
+	width: 150px;
+	display: block;
+}
 .b2 {
 	display: inline-grid;
 	grid-area: b2;
@@ -1436,22 +1355,15 @@ type-person {
 	border-radius: 8px;
 	font-family: "Roboto", sans-serif;
 	color: rgb(138, 138, 143);
-	z-index: 10;
+	z-index: 0;
 }
 
 .al {
-	display: grid;
+	display: ruby-text;
 }
 
 .al div {
 	grid-column: 1;
-}
-
-.imgPhoto {
-	padding: 6em 0 0 0;
-	height: 150px;
-	width: 150px;
-	border-radius: 50%;
 }
 
 .btEdit {
@@ -1472,6 +1384,8 @@ type-person {
 .b3 div {
 	display: flex;
 	align-items: center;
+	display: flex;
+	padding: 0.4em;
 }
 
 .input-comment {
@@ -1504,4 +1418,16 @@ type-person {
 	width: 100%;
 	height: 100px;
 	border-radius: 8px;
-} */
+}
+
+/*mobile*/
+
+@media screen and (max-width: 700px) {
+	.profile {
+		grid-template-areas:
+			"a1 a1 b1 b1 b1 b1 b1"
+			"b2 b2 b2 b2 b2 b2 b2"
+			"b3 b3 b3 b3 b3 b3 b3"
+			"b4 b4 b4 b4 b4 b4 b4";
+	}
+}
