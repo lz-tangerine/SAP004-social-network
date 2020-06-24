@@ -122,15 +122,6 @@ let uploadFoto = (data) => {
   }
 
   document.querySelector('input[type=file]').addEventListener('change', changePhoto)
-  
-
-  // var query = firebase.firestore().collection('users').where('user_uid', '==', firebase.auth().currentUser.uid)
-  // query.get().then(function(users) {
-  //   users.forEach(function(user) {
-  //     console.log(user.data());
-  //     user.ref.update({ name: 'karininha', photo:'' });
-  //   });
-  // });
 }
 export default {
   render,

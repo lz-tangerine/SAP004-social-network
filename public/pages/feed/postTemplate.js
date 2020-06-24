@@ -63,7 +63,7 @@ const postTemplate = ({ userId, userName, text, likes, id , currentUser, comment
         </div>
         <div id="newCommentContainer-${id}" class="comment-container">
           <div class="comment">
-            <img src="imagens/astronautrosie.jpg" alt="" class="foto-comment">
+            <img src="${user && user.photo ? user.photo : 'imagens/astronautrosie.jpg'}" alt="" class="foto-comment">
             <input type="text" data-id="${id}" id="addComment-${id}" class="input-comment"/>
           </div>
         </div>
@@ -82,41 +82,6 @@ const postTemplate = ({ userId, userName, text, likes, id , currentUser, comment
 
   return template
 }
-
-
-// const postTemplate = ({ userId, userName, text, whoLiked, id, currentUser, comments }) => {
-//   return `
-//     <div class="template-feed">
-//       <div class="feed-pessoal">
-//         <img src="${user.photo ? user.photo : 'imagens/astronautrosie.jpg'}" alt="" class="foto-feed">
-//         <img src="imagens/astronautrosie.jpg" alt="" class="foto-feed">
-//         <span class="user-post">${userName}</span>
-//       </div>
-//       <div class="itens-text">
-//         <p class="post-text" id="post-text-${id}">${text}</p>
-//       </div>
-//       <div class="itens-post">
-//         <div class="icons-left"> 
-//           <img src="imagens/like-01.png" id="like-${id}" data-id="${id}" class="like-feed"/>${whoLiked.length}
-//           ${showDelete(currentUser, userId, id)}
-//         </div>
-//         <div class="icons-right">
-//           <img src="imagens/comentar.png" id="comments-${id}" class="comentar-feed"/>
-//           <img src="imagens/editar.png" class="edit-post" id="edit-${id}" data-id="${id}"/>
-//           <img src="imagens/compartilhar.png" id="compartilhar" class="compartilhar-feed"/>
-//         </div>
-//       </div>
-//       <div id="newCommentContainer-${id}" class="comment-container">
-//         <div class="comment">
-//           <img src="imagens/astronautrosie.jpg" alt="" class="foto-comment">
-//           <input type="text" data-id="${id}" id="addComment-${id}" class="input-comment"/>
-//         </div>
-//       </div>
-//       <div class="comment-container show">
-//         ${comments.map(commentTemplate(currentUser, id)).join('')}
-//       </div>
-//     </div>`
-// }
 
 export default postTemplate;
 

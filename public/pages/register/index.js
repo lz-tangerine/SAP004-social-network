@@ -60,15 +60,9 @@ let uploadFoto = (data) => {
 
 const saverUserData = () => {
   const name = document.getElementById('name');
-  const surname = document.getElementById('surname');
-  const status = document.getElementById('status');
-  const date = document.getElementById('date');
 
   const user = {
     name: name.value,
-    surname: surname.value,
-    status: status.value,
-    date: date.value,
     photo: "",
     user_uid: firebase.auth().currentUser.uid,
   };
@@ -81,9 +75,8 @@ const create = () => {
   const password = document.getElementById('password').value;
   const passwordConfirm = document.getElementById('password-confirm').value;
   const name = document.getElementById('name').value;
-  const surname = document.getElementById('surname').value;
 
-  if (name === '' || surname === '' || email === '' || password === '') {
+  if (name === '' || email === '' || password === '') {
     loginError.innerHTML = 'Preencha os campos em branco';
   } else if (password !== passwordConfirm) {
     loginError.innerHTML = 'Senha inválida';
