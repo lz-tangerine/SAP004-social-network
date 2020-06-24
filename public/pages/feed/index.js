@@ -75,6 +75,8 @@ const addDeleteEvent = (post) => {
 
 const postEditEvent = (event) => {
   const id = event.target.dataset.id;
+
+  console.log("postEvent", id,event.target)
   const postContent = document.getElementById(`post-text-${id}`)
   postContent.contentEditable = true;
   postContent.addEventListener('keyup', function (e) {

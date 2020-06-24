@@ -25,7 +25,7 @@ const showEditComment = (currentUser, userId, id, index) => {
 
 const commentTemplate = ({ currentUser, user, postId, text, userName, userId }, index) => {
   return `
-    <div>
+    <div class"comments-photo">
       <div class="img-name">
         <img src="${user && user.photo ? user.photo : 'imagens/astronautrosie.jpg'}" alt="" class="foto-comment">
         <span class="user-comment">${userName}</span>
@@ -49,7 +49,7 @@ const postTemplate = ({ userId, userName, text, likes, id , currentUser, comment
         <span class="user-post">${userName}</span>
       </div>
       <div class="itens-text">
-        <p class="post-text">${text}</p>
+         <p class="post-text" id="post-text-${id}">${text}</p>
       </div>
       <div class="itens-post">
         <div class="icons-left"> 

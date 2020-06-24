@@ -4,7 +4,7 @@ const template = `
 
     <section class="logo-login">
       <div class="logo">
-        <img alt="logo" class="logo-control" src="imagens/logo.png"/>
+        <img alt="logo" class="control-logo" src="imagens/logo.png"/>
       </div>
       <img alt="logo-name" class="name-logo" src="imagens/logo-name.png"/>
     </section>
