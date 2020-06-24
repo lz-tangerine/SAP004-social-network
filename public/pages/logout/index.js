@@ -8,9 +8,9 @@ const render = ()  => {
 
 const init =  () => {
     firebase.auth().signOut().then(function() {
-      window.location.hash = '#login';
+      window.location.href = '/';
     }).catch(function(error) {
-      window.location.hash = '#login';
+      window.location.href = '/';
     });
 }
 

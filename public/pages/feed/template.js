@@ -23,7 +23,7 @@ const template = (user) => {
       <img alt="capa" class="capa-feed" src="imagens/fundo.jpg"/>
       <img src="${user.photo ? user.photo : 'imagens/astronautrosie.jpg'}" alt="" class="foto-perfil">
       <div class="name-perfil">
-        <p id="userId" class="user-perfil">${user.name}</p>
+        <p id="userName" class="user-perfil">${user.name}</p>
         <p id="typeGame" class="type-person">Jogos Plataforma</p>
       </div>
   </section>
@@ -35,7 +35,7 @@ const template = (user) => {
       </div>
       <textarea type="text" id="postText" name="postText" class="post"></textarea> 
       <div class="button-post">
-        <img src="${user.photo ? user.photo : 'imagens/astronautrosie.jpg'}" alt="" class="img-photo">
+        <img src="imagens/foto.png" alt="" class="foto-feed">
         <button id="createPost" class="play">Compartilhar</button>
       </div>
     </section>

@@ -13,7 +13,7 @@ const createPost = () => {
   const text = document.getElementById('postText').value
   const privatePost = document.getElementById('private').checked
   const userId = firebase.auth().currentUser.uid
-  const userName = firebase.auth().currentUser.displayName
+  const userName = document.getElementById('userName').innerHTML
   const post = {
     text,
     userId,
@@ -23,7 +23,9 @@ const createPost = () => {
     comments: [],
     whoLiked: [],
   }
-  firebase.firestore().collection('posts').add(post);
+  firebase.firestore().collection('posts').add(post).then(() => {
+    document.getElementById('postText').value = ''
+  });
 }
 
 const likePost = () => {
@@ -105,14 +107,16 @@ const commentEditEvent = (event) => {
   const id = event.target.dataset.id;
   const index = event.target.dataset.index;
   const commentContent = document.getElementById(`comment-text-${id}-${index}`)
-  commentContent.contentEditable = true;
-  commentContent.addEventListener('keyup', function (e) {
-    const key = e.keyCode;
-    if(key==13){
-      editComment(id, commentContent.innerText, index)
-      commentContent.contentEditable = false;
-    }
-  })
+  if (commentContent) {
+    commentContent.contentEditable = true;
+    commentContent.addEventListener('keyup', function (e) {
+      const key = e.keyCode;
+      if(key==13){
+        editComment(id, commentContent.innerText, index)
+        commentContent.contentEditable = false;
+      }
+    })
+  }
 }
 
 const editComment = (id, text, index) => {
@@ -146,22 +150,25 @@ const addLikeEvent = (post) => {
 const showCommentButton = (post) => {
   const commentButton = document.getElementById(`comments-${post.id}`)
 
-  commentButton.addEventListener('click', () => {
-    const newCommentContainer = document.getElementById(`newCommentContainer-${post.id}`)
-    newCommentContainer.classList.toggle('show')
-  })
-
+  if (commentButton) {
+    commentButton.addEventListener('click', () => {
+      const newCommentContainer = document.getElementById(`newCommentContainer-${post.id}`)
+      newCommentContainer.classList.toggle('show')
+    })
+  }
 }
 
 const addComment = (post) => {
   const inputEnter = document.getElementById(`addComment-${post.id}`);
 
-  inputEnter.addEventListener('keyup', function (e) {
-    var key = e.keyCode;
-    if (key == 13) { // codigo da tecla enter
-      commentPost(post.id, inputEnter.value)
-    }
-  });
+  if (inputEnter) {
+    inputEnter.addEventListener('keyup', function (e) {
+      var key = e.keyCode;
+      if (key == 13) { // codigo da tecla enter
+        commentPost(post.id, inputEnter.value)
+      }
+    });
+  }
 }
 
 
@@ -179,12 +186,14 @@ const deleteComment= (event) => {
 }
 
 const addCommentDeleteEvent = (post) => {
-  post.comments.forEach( (item, index) => {
-    const deleteButton = document.getElementById(`delete-comment-${post.id}-${index}`)
-    if (deleteButton) {
-      deleteButton.addEventListener('click', deleteComment)
-    }
-  })
+  if (post.comments) {
+    post.comments.forEach( (item, index) => {
+      const deleteButton = document.getElementById(`delete-comment-${post.id}-${index}`)
+      if (deleteButton) {
+        deleteButton.addEventListener('click', deleteComment)
+      }
+    })
+  }
 }
 
 
