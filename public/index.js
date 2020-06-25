@@ -1,4 +1,5 @@
-// Este é o ponto de entrada de sua aplicação
-import { home } from './pages/home/main.js';
+import router from './router/index.js';
+import firebase from './firebaseStart.js';
 
-document.querySelector('#root').appendChild(home());
+router()
+firebase.uiConfig();
