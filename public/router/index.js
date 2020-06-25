@@ -25,7 +25,7 @@ const renderPage = () => {
               pageContainer.appendChild(route.render(doc));
               route.init();
             } else {
-              console.log('feed docs size erro..', docs.size)
+              alert ('Logado', docs.size)
             }
           });
       } else {

@@ -1035,7 +1035,8 @@ type-person {
 	.foto-feed {
 		margin: 20px 0 0 10px;
 		border-radius: 50%;
-		width: 20%;
+		width: 16%;
+		height: 127%;
 	}
 	.icon-foto {
 		margin: 20px 0 0 10px;
@@ -1159,13 +1160,15 @@ type-person {
 		padding: 0;
 		list-style: none;
 		overflow: hidden;
-		background-color: #fff;
+		background-color: rgb(249, 133, 214);
 	}
 
 	.header ul li a {
 		display: block;
 		padding: 20px;
 		text-decoration: none;
+		color: rgb(255, 255, 255);
+		background-color: rgb(249, 133, 214);
 	}
 
 	.menu-item:hover {
