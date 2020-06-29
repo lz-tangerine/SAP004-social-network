@@ -15,7 +15,7 @@ const login = () => {
     const loginError = document.getElementById('loginError');
     if (errorCode === 'auth/wrong-password') {
       loginError.innerHTML = 'Senha inválida.';
-    } else if (errorCode === 'auth/user -not-found') {
+    } else if (errorCode === 'auth/user-not-found') {
       loginError.innerHTML = 'Email não encontrado.';
     } else {
       loginError.innerHTML = 'Email não encontrado.';
