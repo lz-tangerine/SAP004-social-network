@@ -45,6 +45,14 @@ const likePost = () => {
     });
 }
 
+
+const addLikeEvent = (post) => {
+  const likeButton = document.getElementById(`like-${post.id}`)
+  if (likeButton) {
+    likeButton.addEventListener('click', likePost)
+  }
+}
+
 const commentPost = (id, text) => {
   firebase.firestore().collection('posts').doc(id).get()
     .then((post) => {
@@ -142,13 +150,6 @@ const addCommentEditEvent = (post) => {
   })
 }
 
-const addLikeEvent = (post) => {
-  const likeButton = document.getElementById(`like-${post.id}`)
-  if (likeButton) {
-    likeButton.addEventListener('click', likePost)
-  }
-}
-
 const showCommentButton = (post) => {
   const commentButton = document.getElementById(`comments-${post.id}`)
 
@@ -209,7 +210,7 @@ const addEvents = (post) => {
   addCommentEditEvent(post);
 }
 
-const showFeed = () => {
+export const showFeed = (userId = null) => {
   const currentUser = firebase.auth().currentUser.uid
   const timeline = document.getElementById('timeline')
 
@@ -223,39 +224,49 @@ const showFeed = () => {
       users[user.user_uid] = user
     })
 
+    const buildUserPost = (querySnapshot) => {
+      const posts = [];
+      querySnapshot.forEach(function (doc) {
+        const post = doc.data()
+        post.id = doc.id
+        post.currentUser = currentUser
+        post.user = users[post.userId]
+
+        let comments = []
+        post.comments.forEach((comment) => {
+          comments.push({user: users[comment.userId], ...comment})
+        });
+        post.comments = comments
+
+        if (post.private && post.userId === currentUser) {
+          posts.push(post);
+        } else if (!post.private) {
+          posts.push(post)
+        }
+      });
+
+      const content = posts.map(postTemplate)
+      timeline.innerHTML = content.join('');
+      posts.forEach(addEvents)
+    }
+
+    if (userId) {
+      return firebase.firestore()
+      .collection("posts")
+      .where('userId', '==', userId)
+      .orderBy('created', 'desc')
+      .onSnapshot(buildUserPost);
+    }
 
     firebase.firestore()
       .collection("posts")
       .orderBy('created', 'desc')
-      .onSnapshot(function (querySnapshot) {
-        var posts = [];
-        querySnapshot.forEach(function (doc) {
-          const post = doc.data()
-          post.id = doc.id
-          post.currentUser = currentUser
-          post.user = users[post.userId]
-  
-          let comments = []
-          post.comments.forEach((comment) => {
-            comments.push({user: users[comment.userId], ...comment})
-          });
-          post.comments = comments
-
-          if (post.private && post.userId === currentUser) {
-            posts.push(post);
-          } else if (!post.private) {
-            posts.push(post)
-          }
-        });
-  
-        const content = posts.map(postTemplate)
-        timeline.innerHTML = content.join('');
-        posts.forEach(addEvents)
-      });
+      .onSnapshot(buildUserPost);
   })
 
 
 }
+
 
 const init = () => {
   const postButton = document.getElementById('createPost');
