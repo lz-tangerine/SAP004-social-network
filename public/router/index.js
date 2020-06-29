@@ -16,17 +16,13 @@ const renderPage = () => {
         firebase.firestore().collection('users')
           .where('user_uid', '==', userAuth.uid).get()
           .then(docs => {
-            if (docs.size == 1) {
-              let doc = {};
-              docs.forEach(function(d) {
-                doc = d.data();
-              });
-              pageContainer.innerHTML='';
-              pageContainer.appendChild(route.render(doc));
-              route.init();
-            } else {
-              alert ('Logado', docs.size)
-            }
+            let doc = {};
+            docs.forEach(function(d) {
+              doc = d.data();
+            });
+            pageContainer.innerHTML='';
+            pageContainer.appendChild(route.render(doc));
+            route.init();
           });
       } else {
         console.log('erro redirect login');
