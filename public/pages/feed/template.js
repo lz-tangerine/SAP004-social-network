@@ -41,8 +41,8 @@ const template = (user) => {
     </section>
   </main>
   <section class="feed">
-      <div id="timeline" class="timeline-feed"></div>
-    </section>
+    <div id="timeline" class="timeline-feed"></div>
+  </section>
 </section>
 `
 };
