@@ -1,5 +1,5 @@
 import template from './template.js'
-
+import {showFeed} from '../feed/index.js'
 
 const render = (user)  => {
   const container = document.createElement('div');
@@ -121,7 +121,9 @@ let uploadFoto = (data) => {
 
   }
 
-  document.querySelector('input[type=file]').addEventListener('change', changePhoto)
+  document.querySelector('input[type=file]').addEventListener('change', changePhoto);
+  console.log(firebase.auth().currentUser.uid)
+  showFeed(firebase.auth().currentUser.uid);
 }
 export default {
   render,
