@@ -51,14 +51,9 @@ const template = (user) => {
   </div>
 
   <div class="b4">
-    <div>
-      <textarea class="textArea4" id="textArea4" name="textArea4" rows="10" cols="90"></textarea>
-    </div>
-    <div>
-      <img src="imagens/comentar.png" width="100">
-      <img src="imagens/compartilhar.png" width="100">
-      <img src="imagens/lixo-01.png" width="100">
-    </div>
+    <section class="feed">
+      <div id="timeline" class="timeline-feed">oioioioi</div>
+    </section>
   </div>
 
 
