@@ -17,8 +17,6 @@ Segundo o [Wikipedia](https://pt.wikipedia.org/wiki/Rede_social) rede social é 
 
 ## 2. O aplicativo
 
-![Aplicativo](src/imagens/app.png)
-
 O _Elas Jogam_ nasceu da necessidade de um lugar seguro para que jogadoras conseguissem se conhecer, se conectar, criar grupos, marcar jogos online, compartilhar videos e conquistas sem [sofrer assédios ou bullings](http://www.parlamidia.com/gamefemme/). Visto que no mercado brasileiro de games, [as mulheres representam 53% dos jogadores](https://forbes.com.br/colunas/2019/06/mais-da-metade-dos-brasileiros-joga-games-eletronicos/) ter uma rede em que elas se sintam a vontade pra conversar sobre seus jogos favoritos e se conectar com outras jogadoras se faz mais que necessario e o app cumpre essa função!
 
 Com uma interface amigavel, clean e funcional, a usuaria tem a opção de fazer o cadastro usando email e senha, com o Google ou Facebook! Na parte do perfil a usuária pode explicitar quais jogos gosta ou joga pra facilitar as buscas e a conexão com possiveis parceiras de time!
