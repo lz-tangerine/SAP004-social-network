@@ -5,6 +5,7 @@ import profile from '../pages/profile/index.js';
 import logout from '../pages/logout/index.js';
 
 const routes = {
+<<<<<<< HEAD
   login, 
   register,
   feed,
@@ -12,5 +13,11 @@ const routes = {
   logout,
 
 }
+=======
+  login: login(),
+  register: register(),
+};
+>>>>>>> 81c0afaab8b23b97cf551b408d15e09a64dd9108
 
+// eslint-disable-next-line eol-last
 export default routes;
